@@ -5,7 +5,11 @@ Data (messages) to be consumed by Insights Results Aggregator
 ## Mock data for aggregator
 
 Data to be consumed by aggregator through Kafka broker is prepared in `messages/` subdirectory.
-Several types of data are available there:
+These data can be send to Insights Results Aggregator by using the script called `produce.sh` or `produce_50k_messages.sh`.
+The mentioned tools are available at https://github.com/RedHatInsights/insights-results-aggregator-utils/blob/master/input/produce.sh and
+https://github.com/RedHatInsights/insights-results-aggregator-utils/blob/master/input/produce_50k_messages.sh
+
+Several types of data are prepared there:
 
 * `messages/results_no_tutorial/r_[0-9]*.json` - real data analyzed from test clusters
 * `messages/results_tutorial/r_tutorial_[0-9]*.json` - real data analyzed from test clusters with added tutorial rule result
