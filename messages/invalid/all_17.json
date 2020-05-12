@@ -1,0 +1,239 @@
+                "type": "skip"
+                "rule_id": "bug_1766907|BUGZILLA_BUG_1766907",
+            {
+                "tags": [],
+                "reason": "MISSING_REQUIREMENTS",
+     ***FOO***               ]
+                            "last_trans_time": "2020-03-31T08:39:51Z"***FOO***
+                        {
+                "rule_fqdn": "ccx_rules_o***FOO***cp.ocs.check_pods_scc.report",
+            ***FOO***    },
+            {
+                            "***FOO***Kubelet Version": "v1.14.6+0a21dd3b3",
+    ***FOO***                        "role": "master",
+                        "name": "authentication",
+                    "docs": [
+                "details": "All: ['ccx_ocp_core.specs.must_gather_ocs.OperatorsOcsMGOCS'] Any: ",
+                "rule_id": "samples_op_failed_image_import_check|SAMPLES_FAILED_IMAGE_IMPORT_ERR",
+                        "lastTransitionTime": "2020-03-19T08:32:53Z"
+                        "https://access.redhat.com/solutions/4569191"
+                        ***FOO***},
+                        "available": {
+           ***FOO*** {
+                    "kcs": [
+                "reason": "MISSING_REQUIREMENTS",
+   ***FOO*** }
+             ***FOO***               "memory": 8.16,
+                            "reason": "AsExpected",
+            {
+            {
+ERROR_LINE
+                    "type": "rule",
+    "OrgID":***FOO*** 11789772,
+        ],
+                            "reaso***FOO***n": "NoData",
+                "rule_fqdn": "ccx_rules_ocp.external.rules.image***FOO***_registry_pv_not_bound.report",
+                "type": "rule",
+                    },
+                },
+                }
+                    "t***FOO***ype": "rule",
+ ***FOO***           },
+             ***FOO***   "links": {
+                "type": "skip"
+                "rule_fqdn": "ccx_rules_ocp.external.rules.image_registry_pv_low_capacity.report",
+                "rule_fqdn": "ccx_rules_ocp.ocs.pvc_phase_check.report",
+                    "nodes_with_different_version": [
+            {
+ERROR_LINE
+        ],
+                "details": "All: ['ccx_rules_ocp.common.conditions.image_registry.DegradedImageRegistryOperator', 'ccx_rules_ocp.common.conditions.image_registry.ImageRegistryPod', 'ccx_rules_ocp.common.conditions.image_registry.ImageRegistryPersistentVolumeClaim'] Any: ",
+                    "kcs": "https://access.redhat.com/solutions/4563171",
+        "info": [],
+    ***FOO***                    }
+                "type": "skip"
+                        "name": "openshift***FOO***-samples",
+           ***FOO***     "type": "skip"
+                            "last_trans_time": "2020-03-31T08:39:51Z"
+                    "info": {
+                "details": "All: ['ccx_rules_ocp.common.conditions.image_registry.DegradedImageRegistryOperator', 'ccx_rules_ocp.common.conditions.imag***FOO***e_registry.ImageRegistryPod', 'ccx_rules_ocp.common.conditions.image_registry.ImageRegistryPersistentVolumeClaim'] Any: ",
+  ***FOO***              "details": {
+                },
+                        "upgradeable": {
+}
+                "type": "skip"
+                "key": "SAMPLES_FAILED_IMAGE_IMPORT_ERR",
+                "type": "skip"
+                        {
+                    },
+            },
+                "details": {
+                ***FOO***"type": "skip"
+     ***FOO***           "reason": "MISSING_REQUIREMENTS",
+                "details": "All: ['ccx_ocp_core.specs.must_gather_ocs.PersistentVolumeClaimsMGOCS'] Any: ",
+                "key": "NODES_MINIMUM_REQUIREMENTS_NOT_MET",
+    "ClusterName": "5d5892d3-1f74-4ccf-91af-548dfc9767aa",
+            {
+                            "last_trans_time": "2020-03-31T08:39:51Z"
+             ***FOO***       "type": "rule",
+                "rule_fqdn": "ccx_rules_ocp.external.bug_rules.bug_1802248.report",
+            {
+            {
+                            "status": true,
+                "reason": "MISSING_REQUIREMENTS",
+            },
+                "details": "All: ['ccx_ocp_core.specs.must_gather.DeploymentsMG'] An***FOO***y: ",
+ERROR_***FOO***LINE
+            }
+ERROR_LINE
+                "details": {
+        },
+                "reason": "MISSING_REQUIREMENTS",
+                "type": "rule",
+                        },
+                "reason": "MISSING_REQUIREMENTS",
+                "rule_id": "nodes_requirements_check|NODES_MINIMUM_REQUIREMENTS_NOT_MET",
+            ***FOO***            },
+                "reason": "MISSING_REQUIREMENTS",
+            {
+                 ***FOO***           "status": null,
+                        "https://docs.openshift.com/container-platform/4.1/installing/installing_bare_metal/installing-bare-metal.html#minimum-resource-requirements_installing-bare-metal"
+                "type": "skip"
+                            "Node": "oc2",
+            },
+                            "reason": "WellKnownEndpointDegradedError",
+                    "type": "rule",
+            },
+                            "Kubelet Version": "v1.14.6+0a21dd3b3",
+                        "https://access.redhat.com/solutions/460***FOO***2641"
+                "component": "ccx_rules_ocp.external.rules.nodes_requirements_check.report",
+                "type": "rule",
+            },
+                "links": {
+                "rule_fqdn": "ccx_rules_***FOO***ocp.ocs.ceph_check_mon_clock_skew.report",
+                        "https://access.redhat.com/solutions/4563171"
+            },
+  ***FOO***                  "kcs": [
+                "details": "All: ['ccx_rules_ocp.common.conditions.image_registry.DegradedImageRegistryOperator', 'ccx_rules_ocp.common.conditions.image_registry.ImageRegistryPod', 'ccx_rules_ocp.common.conditions.image_registry.isImageRegistryPodEmptyDirVolume', 'ccx_rules_ocp.common.conditions.image_registry.isImageRegistryPodPersistentVolume'] Any: ",
+                }
+            },
+                "type": "skip"
+                    "kcs": [
+                "key": "AUTH_OPERATOR_PROXY_ERROR",
+                "details": "All: ['ccx_rules_ocp.ocs.ceph_check_mon_clock_skew.get_mon_reporting_clock_skew'] Any: ",
+                "details": "All: ['ccx_ocp_core.specs.must_gather_ocs.OperatorsOcsMGOCS'] Any: ",
+     ***FOO***   "skips": [
+            {
+                "type": "rule",
+                }
+                "component": "ccx_rules_ocp.external.rules.samples_op_failed_image_import_check.report",
+                        }
+                    ]
+                    "error_key": "BUGZILLA_BUG_1766907"
+                    "link": "https://docs.openshift.com/container-platform/4.1/installing/installing_bare_metal/installing-bare-metal.html#minimum-resource-requirements_installing-bare-metal",
+                "rule_fqdn": "ccx_rules_ocp.external.rules.image_registry_no_volume_set_check.report",
+        "pass": []
+ERROR_LIN***FOO***E
+                    ]
+                "rule_fqdn": "ccx_rules_ocp.ocs.check_ocs_version.report",
+                    ]
+            "hostname": null
+            }
+                    "error_key": "NODE_KUBELET_VERSION"
+                        },
+                            "message": null,
+                "details": "All: ['ccx_ocp_core.specs.must_gather_ocs.PodsMGOCS'] Any: ",
+                "details": "All: ['ccx_rules_ocp.common.conditions.image_registry.DegradedImageRegistryOperator', 'ccx_rules_ocp.common.conditions.image_registry.ImageRegistryPod', 'ccx_rules_ocp.common.conditions.image_registry.ImageRegistryPersistentVolumeClaim'] Any: ",
+                "reason": "MISSING_REQUIREMENTS",
+                    "error_key": "AUTH_OPERATOR_PROXY_ERROR"
+***FOO***        "system": {
+                        "message": "Samples installed at 4.2.0, with image import failures for these imagestreams: php ",
+                }
+                "reason": "MISSING_REQUIREMENTS",
+            {
+                "component": "ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check.report",
+{
+                    "type": "rule",
+                "tags": [],
+                            "reason": "NoData",
+    "LastChecked": "2020-04-02T09:00:05.268294Z",
+                            "status": null,
+                    "kc***FOO***s": [
+       ***FOO*** "reports": [
+            },
+                "details": {
+                "type": "skip"
+                "key": "NODE_KUBELET_VERSION",
+                            "message": null,
+                    "op": {
+                        },
+                            "last_trans_time": "2020-03-31T08:42:3***FOO***3Z"
+            },
+ERROR_LINE
+                            "name": "foo1",
+                            "message": "WellKnownEndpointDegraded: failed to GET well-known https://10.237.112.145:6443/.well-known/oauth-authorization-server: Tunnel or SSL Forbidden",
+                "rule_fqdn": "ccx_rules_ocp.external.bug_rules.bug_1801300.report",
+                    ],
+        "fingerprints": [],
+ERROR_LINE
+       ***FOO***     },
+                            "message": null,
+                    "doc": [],
+ ***FOO***                           "status": true,
+                "type": "skip"
+                "tags": [],
+ERROR_LINE
+                    "error_key": "SAMPLES***FOO***_FAILED_IMAGE_IMPORT_ERR"
+                        "https://access.redhat.com/solutions/4631541"
+                "rule_id": "nodes_kubelet_version_check|NODE_KUBELET_VERSION",
+                            "Kubelet Version": "v1.14.6+d39ad8449",
+ERROR_LI***FOO***NE
+ ***FOO***               }
+                "component": "ccx_rules_ocp.external.bug_rules.bug_1766907.report",
+  ***FOO***              "reason": "MISSING_REQUIREMENTS",
+                "details": {
+   ***FOO***                 ]
+                "tags": [],
+            },
+   ***FOO***         {
+                "rule_id": "***FOO***cluster_wide_proxy_auth_check|AUTH_OPERATOR_PROXY_ERROR",
+ERROR_LINE
+                "details": "All: ['ccx_ocp_core.specs.must_gather.DeploymentsMG'] Any: ",
+                    ],
+                   ***FOO*** ],
+                "rule_fqdn": "ccx_rules_ocp.ocs.operator_phase_check.report",
+         ***FOO***   {
+                "component": "ccx_rules_ocp.external.rules.nodes_kubelet_version_check.report",
+                    "error_key": "NODES_MINIMUM_REQUIREMENTS_NOT_MET"
+                    "kcs_link": "https://access.redhat.com/solutions/4602641",
+            },***FOO***
+                    "bz": [
+                "key": "BUGZILLA_BUG_1766907",
+ERROR_LIN***FOO***E
+                            "role": "worker"
+                        "progressing": {
+                     ***FOO***   {
+                "links": {
+                        "condition": "Degraded",
+            {
+                "links": {
+                            "Node": "oc3",
+                            "Node": "oc1",
+               ***FOO***         "degraded": {
+                    "kcs": "https://access.redhat.com/solutions/4569191",
+                            "role": "worker"
+                        "version": null
+                "type": "rule",
+            "metadata": {},
+        ***FOO***                "reason": "FailedImageImports",
+                            "memory_req": 16
+                        "https://bugzilla.redhat.com/show_bug.cgi?id=1766907"
+                "reason": "MISSING_REQUIREMENTS",
+ERROR_L***FOO***INE
+               ***FOO***     "nodes": [
+    ***FOO***            },
+        ***FOO***        "rule_fqdn": "ccx_rules_ocp.external.rules.image_registry_pv_no_access.report",
+ERROR_LINE
+                            "role": "worker"
+                "tags": [],
+                "links": {
