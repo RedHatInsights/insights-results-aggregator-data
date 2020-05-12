@@ -24,3 +24,8 @@ Several types of data are prepared there:
 * `messages/broken/added_items*.json` - reports with added items (that should not be in there)
 * `messages/broken/mutated_items*.json` - reports with mutated items
 * `messages/broken/without_*.json` - reports without one or more attributes
+* `messages/invalid/added_*.json - invalid JSONs (wrong structure) with added random lines
+* `messages/invalid/deleted_*.json - invalid JSONs (wrong structure) with removed lines
+* `messages/invalid/shuffled_*.json - invalid JSONs (wrong structure) with shuffled lines
+* `messages/invalid/mutated_*.json - invalid JSONs (wrong structure) with mutated lines
+* `messages/invalid/all_*.json - invalid JSONs (wrong structure) with lines changed in many ways
