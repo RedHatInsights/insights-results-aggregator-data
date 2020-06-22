@@ -1,8 +1,12 @@
 # insights-results-aggregator-data
 
+Data shared by insights-results-* microservices.
+
+## Messages
+
 Data (messages) to be consumed by Insights Results Aggregator
 
-## Mock data for aggregator
+### Mock data for aggregator
 
 Data to be consumed by aggregator through Kafka broker is prepared in `messages/` subdirectory.
 These data can be send to Insights Results Aggregator by using the script called `produce.sh` or `produce_50k_messages.sh`.
@@ -13,7 +17,7 @@ Several types of data are prepared there:
 
 * `messages/results_no_tutorial/r_[0-9]*.json` - real data analyzed from test clusters
 * `messages/results_tutorial/r_tutorial_[0-9]*.json` - real data analyzed from test clusters with added tutorial rule result
-* `messages/normal/result*.json` - artifically created data
+* `messages/normal/result*.json` - artificially created data
 * `messages/normal/big_resuts.json` - file with most reports created by joining several real data (no cluster is in the state when all rules fail)
 * `messages/normal/big_results_tutorial.json` - the same, but with tutorial rule result
 * `messages/normal/big_results_no_skips.json` - the same, but no skipped rules are stored
@@ -29,3 +33,8 @@ Several types of data are prepared there:
 * `messages/invalid/shuffled_*.json` - invalid JSONs (wrong structure) with shuffled lines
 * `messages/invalid/mutated_*.json` - invalid JSONs (wrong structure) with mutated lines
 * `messages/invalid/all_*.json` - invalid JSONs (wrong structure) with lines changed in many ways
+
+### Test data
+
+`github.com/RedHatInsights/insights-results-aggregator-data/testdata` package contains files with repeated data 
+to be used in tests
