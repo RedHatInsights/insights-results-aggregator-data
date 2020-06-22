@@ -1,9 +1,10 @@
 package testdata
 
 import (
-	"github.com/RedHatInsights/insights-results-aggregator-utils/types"
-	proxy_types "github.com/RedHatInsights/insights-results-smart-proxy/types"
 	"time"
+
+	"github.com/RedHatInsights/insights-operator-utils/types"
+	proxy_types "github.com/RedHatInsights/insights-results-smart-proxy/types"
 )
 
 var (
