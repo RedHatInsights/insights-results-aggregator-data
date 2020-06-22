@@ -21,8 +21,8 @@ import (
 	"time"
 
 	"github.com/RedHatInsights/insights-content-service/content"
-	"github.com/RedHatInsights/insights-results-aggregator-utils/tests/helpers"
-	"github.com/RedHatInsights/insights-results-aggregator-utils/types"
+	"github.com/RedHatInsights/insights-operator-utils/tests/helpers"
+	"github.com/RedHatInsights/insights-operator-utils/types"
 	"github.com/google/uuid"
 )
 
@@ -93,9 +93,9 @@ const (
 	}`
 	Rule2ExtraData     = "rule 2 extra data"
 	Rule3ExtraData     = "rule 3 extra data"
-	Rule1Disabled = false
-	Rule2Disabled = false
-	Rule3Disabled = false
+	Rule1Disabled      = false
+	Rule2Disabled      = false
+	Rule3Disabled      = false
 	KafkaOffset        = types.KafkaOffset(1)
 	TestRequestID      = types.RequestID("example12345678/requestID")
 	ClusterReportEmpty = types.ClusterReport("{}")
