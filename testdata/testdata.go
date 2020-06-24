@@ -36,27 +36,35 @@ const (
 	BadRuleID        = types.RuleID("rule id with spaces")
 	Rule2ID          = types.RuleID("test.rule2")
 	Rule3ID          = types.RuleID("test.rule3")
+	Rule4ID          = types.RuleID("test.rule4")
 	Rule1Name        = "rule 1 name"
 	Rule2Name        = "rule 2 name"
 	Rule3Name        = "rule 3 name"
+	Rule4Name        = "rule 4 name"
 	ErrorKey1        = "ek1"
 	ErrorKey2        = "ek2"
 	ErrorKey3        = "ek3"
+	ErrorKey4        = "ek4"
 	Rule1Description = "Clusteroperator is degraded when the installer pods are removed too soon during upgrade"
 	Rule2Description = "rule 2 description"
 	Rule3Description = "rule 3 description"
+	Rule4Description = "rule 4 description"
 	Rule1CreatedAt   = "2020-03-06T12:00:00Z"
 	Rule2CreatedAt   = "1970-01-02T00:00:00Z"
 	Rule3CreatedAt   = "1970-01-03T00:00:00Z"
+	Rule4CreatedAt   = "1970-01-03T00:00:00Z"
 	Rule1Summary     = "rule 1 summary"
 	Rule2Summary     = "rule 2 summary"
 	Rule3Summary     = "rule 3 summary"
+	Rule4Summary     = "rule 4 summary"
 	Rule1Reason      = "Clusteroperator{{?pydata.degraded_operators.length>1}}s{{?}} degraded with NodeInstallerDegraded in reason:\n\n{{~ pydata.degraded_operators :operator }}\n**Cluster-operator:**  **{{=operator[\"name\"]}}**\n- *Reason:* {{=operator[\"degraded\"][\"reason\"]}}\n- *Message:* {{=operator[\"degraded\"][\"message\"]}}\n- *Last transition*: {{=operator[\"degraded\"][\"last_trans_time\"]}}\n\n{{~}}\n"
 	Rule2Reason      = "rule 2 reason"
 	Rule3Reason      = "rule 3 reason"
+	Rule4Reason      = "rule 4 reason"
 	Rule1Resolution  = "You may be hitting a [known bug](https://bugzilla.redhat.com/show_bug.cgi?id=1723966) and Red Hat recommends that you complete the following steps:\n\n{{~ pydata.degraded_operators :operator }}\n{{? operator[\"name\"] == \"kube-apiserver\"}}\n- For the **kube-apiserver** clusteroperator do:\n~~~\noc patch kubeapiserver/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-controller-manager\"}}\n- For the **kube-controller-manager** clusteroperator do:\n~~~\noc patch kubecontrollermanager/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-scheduler\"}}\n- For the **kube-scheduler** clusteroperator do:\n~~~\noc patch kubescheduler/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\nThen wait several minutes and check if the operator is no longer degraded or progressing. If it is still degraded and the same error message is shown, retry (the race condition can be triggered again). If the error message is different or some retries do not make any improvement, open a support case to get further assistance.\n\nIf this solution solves your issue, but you are interested in tracking the definitive resolution of the bug, you can open a support case to do that as well.\n{{~}}"
 	Rule2Resolution  = "rule 2 resolution"
 	Rule3Resolution  = "rule 3 resolution"
+	Rule4Resolution  = "rule 4 resolution"
 	Rule1ExtraData   = `{
 		"degraded_operators": [
 			{
@@ -93,6 +101,7 @@ const (
 	}`
 	Rule2ExtraData     = "rule 2 extra data"
 	Rule3ExtraData     = "rule 3 extra data"
+	Rule4ExtraData     = "rule 4 extra data"
 	Rule1Disabled      = false
 	Rule2Disabled      = false
 	Rule3Disabled      = false
@@ -125,6 +134,14 @@ var (
 		Reason:     Rule3Reason,
 		Resolution: Rule3Resolution,
 		MoreInfo:   Rule3ExtraData,
+	}
+	Rule4 = types.Rule{
+		Module:     Rule4ID,
+		Name:       Rule4Name,
+		Summary:    Rule4Summary,
+		Reason:     Rule4Reason,
+		Resolution: Rule4Resolution,
+		MoreInfo:   Rule4ExtraData,
 	}
 	RuleOnReport1 = types.RuleOnReport{
 		Module:       Rule1.Module,
@@ -225,6 +242,32 @@ var (
 			},
 		},
 	}
+	RuleContent4 = content.RuleContent{
+		Summary:    Rule4.Summary,
+		Reason:     Rule4.Reason,
+		Resolution: Rule4.Resolution,
+		MoreInfo:   Rule4.MoreInfo,
+		Plugin: content.RulePluginInfo{
+			Name:         Rule4.Name,
+			NodeID:       "",
+			ProductCode:  "",
+			PythonModule: string(Rule4.Module),
+		},
+		ErrorKeys: map[string]content.RuleErrorKeyContent{
+			ErrorKey4: {
+				Generic: RuleErrorKey4.Generic,
+				Metadata: content.ErrorKeyMetadata{
+					Condition:   RuleErrorKey4.Condition,
+					Description: RuleErrorKey4.Description,
+					Impact:      ImpactIntToStr[RuleErrorKey4.Impact],
+					Likelihood:  RuleErrorKey4.Likelihood,
+					PublishDate: "2019-10-29 15:00:00",
+					Status:      statusToStr(RuleErrorKey4.Active),
+					Tags:        RuleErrorKey4.Tags,
+				},
+			},
+		},
+	}
 	RuleErrorKey1 = types.RuleErrorKey{
 		ErrorKey:    "ek1",
 		RuleModule:  Rule1ID,
@@ -258,6 +301,18 @@ var (
 		PublishDate: LastCheckedAt,
 		Active:      true,
 		Generic:     "generic3",
+	}
+	RuleErrorKey4 = types.RuleErrorKey{
+		ErrorKey:    ErrorKey4,
+		RuleModule:  Rule4ID,
+		Condition:   "condition1",
+		Description: "description1",
+		Impact:      1,
+		Likelihood:  2,
+		PublishDate: LastCheckedAt,
+		Active:      false,
+		Generic:     "generic1",
+		Tags:        []string{"openshift", "service_availability"},
 	}
 	RuleWithContent1 = types.RuleWithContent{
 		Module:      Rule1.Module,
