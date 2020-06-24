@@ -34,7 +34,7 @@ Several types of data are prepared there:
 * `messages/invalid/mutated_*.json` - invalid JSONs (wrong structure) with mutated lines
 * `messages/invalid/all_*.json` - invalid JSONs (wrong structure) with lines changed in many ways
 
-### Test data
+## Test data
 
 `github.com/RedHatInsights/insights-results-aggregator-data/testdata` package contains files with repeated data 
 to be used in tests
