@@ -111,6 +111,7 @@ const (
 )
 
 var (
+	// Rule1 contains metainformation about rule with key NODE_INSTALLER_DEGRADED
 	Rule1 = types.Rule{
 		Module:     Rule1ID,
 		Name:       Rule1Name,
