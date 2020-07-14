@@ -644,6 +644,9 @@ func statusToStr(status bool) string {
 	return "inactive"
 }
 
+// GetRandomConsumerMessage function returns a generated message for random
+// organization ID, random cluster name and randomly generated timestamp
+// (LastCheckedAt)
 func GetRandomConsumerMessage() string {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
