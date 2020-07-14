@@ -684,6 +684,8 @@ func GetRandomRuleID(length uint) types.RuleID {
 	return result
 }
 
+// GetRandomUserID function returns randomly generated user ID, which is
+// non-negative integer in a range 0..999999.
 func GetRandomUserID() types.UserID {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
