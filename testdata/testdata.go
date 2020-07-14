@@ -685,6 +685,7 @@ func GetRandomUserID() types.UserID {
 	return types.UserID(fmt.Sprint(rand.Intn(999999)))
 }
 
+// GetRandomOrgID returns randomly generated organization ID in range 0..999999
 func GetRandomOrgID() types.OrgID {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
