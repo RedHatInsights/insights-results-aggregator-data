@@ -688,13 +688,16 @@ func GetRandomUserID() types.UserID {
 	return types.UserID(fmt.Sprint(rand.Intn(999999)))
 }
 
-// GetRandomOrgID returns randomly generated organization ID in range 0..999999
+// GetRandomOrgID function returns randomly generated organization ID in range
+// 0..999999
 func GetRandomOrgID() types.OrgID {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
 	return types.OrgID(rand.Intn(999999))
 }
 
+// GetRandomClusterID function returns randomly generated cluster ID, which
+// might look like a regular UUID.
 func GetRandomClusterID() types.ClusterName {
 	return types.ClusterName(uuid.New().String())
 }
