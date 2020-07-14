@@ -668,6 +668,8 @@ func GetRandomConsumerMessage() string {
 	return consumerMessage
 }
 
+// GetRandomRuleID function returns randomly generated rule ID, which is a
+// sequence of lowercase ASCII characters.
 func GetRandomRuleID(length uint) types.RuleID {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
