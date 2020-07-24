@@ -100,9 +100,45 @@ const (
 		"error_key": "NODE_INSTALLER_DEGRADED",
 		"type": "rule"
 	}`
-	Rule2ExtraData     = "rule 2 extra data"
-	Rule3ExtraData     = "rule 3 extra data"
-	Rule4ExtraData     = "rule 4 extra data"
+	Rule2ExtraData = `{
+        "nodes": [
+            {
+                "name": "foo1",
+                "role": "master",
+                "memory": 8.16,
+                "memory_req": 16
+            }
+        ],
+        "link": "https://docs.openshift.com/container-platform/4.1/installing/installing_bare_metal/installing-bare-metal.html#minimum-resource-requirements_installing-bare-metal",
+        "type": "rule",
+        "error_key": "NODES_MINIMUM_REQUIREMENTS_NOT_MET"
+    }`
+	Rule3ExtraData = `{
+	    "type": "rule",
+	    "error_key": "BUGZILLA_BUG_1766907"
+	}`
+	Rule4ExtraData = `{
+        "nodes_with_different_version": [
+            {
+                "Node": "oc1",
+                "Kubelet Version": "v1.14.6+0a21dd3b3",
+                "role": "worker"
+            },
+            {
+                "Node": "oc2",
+                "Kubelet Version": "v1.14.6+0a21dd3b3",
+                "role": "worker"
+            },
+            {
+                "Node": "oc3",
+                "Kubelet Version": "v1.14.6+d39ad8449",
+                "role": "worker"
+            }
+        ],
+        "kcs_link": "https://access.redhat.com/solutions/4602641",
+        "type": "rule",
+        "error_key": "NODE_KUBELET_VERSION"
+    }`
 	Rule1Disabled      = false
 	Rule2Disabled      = false
 	Rule3Disabled      = false
