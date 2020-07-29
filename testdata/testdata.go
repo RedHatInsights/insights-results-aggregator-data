@@ -449,6 +449,39 @@ var (
 		},
 	}
 
+	ReportEmptyRulesParsed = []types.ReportItem{}
+
+	Report2RulesParsed = []types.ReportItem{
+		types.ReportItem{
+			Module:       Rule1ID,
+			ErrorKey:     ErrorKey1,
+			TemplateData: json.RawMessage(Rule1ExtraData),
+		},
+		types.ReportItem{
+			Module:       Rule2ID,
+			ErrorKey:     ErrorKey2,
+			TemplateData: json.RawMessage(Rule2ExtraData),
+		},
+	}
+
+	Report3RulesParsed = []types.ReportItem{
+		types.ReportItem{
+			Module:       Rule1ID,
+			ErrorKey:     ErrorKey1,
+			TemplateData: json.RawMessage(Rule1ExtraData),
+		},
+		types.ReportItem{
+			Module:       Rule2ID,
+			ErrorKey:     ErrorKey2,
+			TemplateData: json.RawMessage(Rule2ExtraData),
+		},
+		types.ReportItem{
+			Module:       Rule3ID,
+			ErrorKey:     ErrorKey3,
+			TemplateData: json.RawMessage(Rule3ExtraData),
+		},
+	}
+
 	Report0Rules = types.ClusterReport(`
 {
 	"system": {
