@@ -25,6 +25,9 @@ Several types of data are prepared there:
 * `messages/normal/no_hits.json` - data with no rule hits (ie. the cluster is healthy)
 * `messages/normal/no_hits_no_skips.json` - data with no rule hits and no skips (ie. there's no health check performed)
 * `messages/normal/tutorial_only.json` - report with only tutorial rule hit
+* `messages/normal/05_rules_hits.json` - report with exactly 5 rule hits
+* `messages/normal/10_rules_hits.json` - report with exactly 10 rule hits
+* `messages/normal/15_rules_hits.json` - report with exactly 15 rule hits
 * `messages/broken/added_items*.json` - reports with added items (that should not be in there)
 * `messages/broken/mutated_items*.json` - reports with mutated items
 * `messages/broken/without_*.json` - reports without one or more attributes
