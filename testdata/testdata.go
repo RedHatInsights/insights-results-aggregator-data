@@ -27,6 +27,7 @@ import (
 )
 
 const (
+	// OrgID represents ID of the first organization in the system (ID=1)
 	OrgID            = types.OrgID(1)
 	ClusterName      = types.ClusterName("84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc")
 	UserID           = types.UserID("1")
@@ -99,9 +100,45 @@ const (
 		"error_key": "NODE_INSTALLER_DEGRADED",
 		"type": "rule"
 	}`
-	Rule2ExtraData     = "rule 2 extra data"
-	Rule3ExtraData     = "rule 3 extra data"
-	Rule4ExtraData     = "rule 4 extra data"
+	Rule2ExtraData = `{
+        "nodes": [
+            {
+                "name": "foo1",
+                "role": "master",
+                "memory": 8.16,
+                "memory_req": 16
+            }
+        ],
+        "link": "https://docs.openshift.com/container-platform/4.1/installing/installing_bare_metal/installing-bare-metal.html#minimum-resource-requirements_installing-bare-metal",
+        "type": "rule",
+        "error_key": "NODES_MINIMUM_REQUIREMENTS_NOT_MET"
+    }`
+	Rule3ExtraData = `{
+	    "type": "rule",
+	    "error_key": "BUGZILLA_BUG_1766907"
+	}`
+	Rule4ExtraData = `{
+        "nodes_with_different_version": [
+            {
+                "Node": "oc1",
+                "Kubelet Version": "v1.14.6+0a21dd3b3",
+                "role": "worker"
+            },
+            {
+                "Node": "oc2",
+                "Kubelet Version": "v1.14.6+0a21dd3b3",
+                "role": "worker"
+            },
+            {
+                "Node": "oc3",
+                "Kubelet Version": "v1.14.6+d39ad8449",
+                "role": "worker"
+            }
+        ],
+        "kcs_link": "https://access.redhat.com/solutions/4602641",
+        "type": "rule",
+        "error_key": "NODE_KUBELET_VERSION"
+    }`
 	Rule1Disabled      = false
 	Rule2Disabled      = false
 	Rule3Disabled      = false
@@ -111,6 +148,7 @@ const (
 )
 
 var (
+	// Rule1 contains metainformation about rule with key NODE_INSTALLER_DEGRADED
 	Rule1 = types.Rule{
 		Module:     Rule1ID,
 		Name:       Rule1Name,
@@ -411,6 +449,39 @@ var (
 		},
 	}
 
+	ReportEmptyRulesParsed = []types.ReportItem{}
+
+	Report2RulesParsed = []types.ReportItem{
+		types.ReportItem{
+			Module:       Rule1ID,
+			ErrorKey:     ErrorKey1,
+			TemplateData: json.RawMessage(Rule1ExtraData),
+		},
+		types.ReportItem{
+			Module:       Rule2ID,
+			ErrorKey:     ErrorKey2,
+			TemplateData: json.RawMessage(Rule2ExtraData),
+		},
+	}
+
+	Report3RulesParsed = []types.ReportItem{
+		types.ReportItem{
+			Module:       Rule1ID,
+			ErrorKey:     ErrorKey1,
+			TemplateData: json.RawMessage(Rule1ExtraData),
+		},
+		types.ReportItem{
+			Module:       Rule2ID,
+			ErrorKey:     ErrorKey2,
+			TemplateData: json.RawMessage(Rule2ExtraData),
+		},
+		types.ReportItem{
+			Module:       Rule3ID,
+			ErrorKey:     ErrorKey3,
+			TemplateData: json.RawMessage(Rule3ExtraData),
+		},
+	}
+
 	Report0Rules = types.ClusterReport(`
 {
 	"system": {
@@ -677,6 +748,9 @@ func statusToStr(status bool) string {
 	return "inactive"
 }
 
+// GetRandomConsumerMessage function returns a generated message for random
+// organization ID, random cluster name and randomly generated timestamp
+// (LastCheckedAt)
 func GetRandomConsumerMessage() string {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
@@ -698,6 +772,8 @@ func GetRandomConsumerMessage() string {
 	return consumerMessage
 }
 
+// GetRandomRuleID function returns randomly generated rule ID, which is a
+// sequence of lowercase ASCII characters.
 func GetRandomRuleID(length uint) types.RuleID {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
@@ -712,18 +788,24 @@ func GetRandomRuleID(length uint) types.RuleID {
 	return result
 }
 
+// GetRandomUserID function returns randomly generated user ID, which is
+// non-negative integer in a range 0..999999.
 func GetRandomUserID() types.UserID {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
 	return types.UserID(fmt.Sprint(rand.Intn(999999)))
 }
 
+// GetRandomOrgID function returns randomly generated organization ID in range
+// 0..999999
 func GetRandomOrgID() types.OrgID {
 	// disable Use of weak random number generator for the whole method
 	/* #nosec G404 */
 	return types.OrgID(rand.Intn(999999))
 }
 
+// GetRandomClusterID function returns randomly generated cluster ID, which
+// might look like a regular UUID.
 func GetRandomClusterID() types.ClusterName {
 	return types.ClusterName(uuid.New().String())
 }
