@@ -373,7 +373,7 @@ var (
 		"OrgID": ` + fmt.Sprint(OrgID) + `,
 		"ClusterName": "` + string(ClusterName) + `",
 		"Report":` + ConsumerReport + `,
-		"LastChecked": "` + LastCheckedAt.Format(time.RFC3339) + `"
+		"LastChecked": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 	}`
 	LastCheckedAt              = time.Unix(25, 0).UTC()
 	RuleContentDirectory3Rules = content.RuleContentDirectory{
@@ -457,7 +457,7 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
@@ -485,7 +485,7 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
@@ -513,7 +513,7 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
@@ -536,6 +536,41 @@ var (
 }
 `
 
+	ClusterReport3Rules = types.ClusterReport(`
+{
+	"reports": [
+		{
+			"rule_id": "` + Rule1ID + "|" + ErrorKey1 + `",
+			"component": "` + Rule1ID + `",
+			"type": "rule",
+			"key": "` + ErrorKey1 + `",
+			"details": ` + Rule1ExtraData + `,
+			"tags": [],
+			"links": {}
+		},
+		{
+			"rule_id": "` + Rule2ID + "|" + ErrorKey2 + `",
+			"component": "` + Rule2ID + `",
+			"type": "rule",
+			"key": "` + ErrorKey2 + `",
+			"details": "` + Rule2ExtraData + `",
+			"tags": [],
+			"links": {}
+		},
+		{
+			"rule_id": "` + Rule3ID + "|" + ErrorKey3 + `",
+			"component": "` + Rule3ID + `",
+			"type": "rule",
+			"key": "` + ErrorKey3 + `",
+			"details": "` + Rule3ExtraData + `",
+			"tags": [],
+			"links": {}
+		}
+	]
+}
+	`)
+
+	// TODO: it's not a correct structure of a cluster report, it can't contain user_vote and disabled fields
 	Report3Rules = types.ClusterReport(`
 {
 	"system": {
@@ -577,7 +612,7 @@ var (
 			"report": {
 				"meta": {
 					"count": 3,
-					"last_checked_at": "` + LastCheckedAt.Format(time.RFC3339) + `"
+					"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 				},
 				"reports": [
 					` + toJSON(RuleOnReport1) + `,
@@ -657,7 +692,7 @@ func GetRandomConsumerMessage() string {
 		    "OrgID": ` + fmt.Sprint(orgID) + `,
 		    "ClusterName": "` + clusterName.String() + `",
 		    "Report":` + consumerReport + `,
-		    "LastChecked": "` + lastCheckedAt.Format(time.RFC3339) + `"
+		    "LastChecked": "` + lastCheckedAt.UTC().Format(time.RFC3339) + `"
 	    }`
 
 	return consumerMessage
