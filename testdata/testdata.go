@@ -438,14 +438,26 @@ var (
 	}
 
 	RuleOnReportResponses = []types.RuleOnReport{
-		types.RuleOnReport{
-			Module: Rule1ID,
+		{
+			Module:       Rule1ID,
+			ErrorKey:     ErrorKey1,
+			UserVote:     types.UserVoteNone,
+			Disabled:     Rule1Disabled,
+			TemplateData: Rule1ExtraData,
 		},
-		types.RuleOnReport{
-			Module: Rule2ID,
+		{
+			Module:       Rule2ID,
+			ErrorKey:     ErrorKey2,
+			UserVote:     types.UserVoteNone,
+			Disabled:     Rule2Disabled,
+			TemplateData: Rule2ExtraData,
 		},
-		types.RuleOnReport{
-			Module: Rule3ID,
+		{
+			Module:       Rule3ID,
+			ErrorKey:     ErrorKey3,
+			UserVote:     types.UserVoteNone,
+			Disabled:     Rule3Disabled,
+			TemplateData: Rule3ExtraData,
 		},
 	}
 
@@ -624,7 +636,7 @@ var (
 			"component": "` + Rule2ID + `",
 			"type": "rule",
 			"key": "` + ErrorKey2 + `",
-			"details": "` + Rule2ExtraData + `",
+			"details": ` + Rule2ExtraData + `,
 			"tags": [],
 			"links": {}
 		},
@@ -633,7 +645,7 @@ var (
 			"component": "` + Rule3ID + `",
 			"type": "rule",
 			"key": "` + ErrorKey3 + `",
-			"details": "` + Rule3ExtraData + `",
+			"details": ` + Rule3ExtraData + `,
 			"tags": [],
 			"links": {}
 		}
