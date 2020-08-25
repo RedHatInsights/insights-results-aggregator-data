@@ -29,6 +29,7 @@ import (
 const (
 	// OrgID represents ID of the first organization in the system (ID=1)
 	OrgID            = types.OrgID(1)
+	Org2ID            = types.OrgID(2)
 	ClusterName      = types.ClusterName("84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc")
 	UserID           = types.UserID("1")
 	User2ID          = types.UserID("2")
