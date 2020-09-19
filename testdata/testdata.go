@@ -21,9 +21,10 @@ import (
 	"time"
 
 	"github.com/RedHatInsights/insights-content-service/content"
+	"github.com/google/uuid"
+
 	"github.com/RedHatInsights/insights-operator-utils/tests/helpers"
 	"github.com/RedHatInsights/insights-operator-utils/types"
-	"github.com/google/uuid"
 )
 
 const (
@@ -549,6 +550,7 @@ var (
 				"key": "` + ErrorKey2 + `",
 				"user_vote": 0,
 				"disabled": false,
+				"disable_feedback": "",
 				"details": ` + helpers.ToJSONString(Rule2ExtraData) + `
 			},
 			{
@@ -556,6 +558,39 @@ var (
 				"key": "` + ErrorKey1 + `",
 				"user_vote": 0,
 				"disabled": true,
+				"disable_feedback": "",
+				"details": ` + helpers.ToJSONString(Rule1ExtraData) + `
+			}
+		]
+	},
+	"status": "ok"
+}
+`
+
+	Report2RulesDisabledRule1WithFeedbackExpectedResponse = `
+{
+	"report": {
+		"meta": {
+			"count": 2,
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+		},
+		"reports": [
+			{
+				"component": "` + string(Rule2ID) + `",
+				"key": "` + ErrorKey2 + `",
+				"user_vote": 0,
+				"disabled": false,
+				"disabled_at": "",
+				"disable_feedback": "",
+				"details": ` + helpers.ToJSONString(Rule2ExtraData) + `
+			},
+			{
+				"component": "` + string(Rule1ID) + `",
+				"key": "` + ErrorKey1 + `",
+				"user_vote": 0,
+				"disabled": true,
+				"disabled_at": "",
+				"disable_feedback": "test",
 				"details": ` + helpers.ToJSONString(Rule1ExtraData) + `
 			}
 		]
