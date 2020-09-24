@@ -140,9 +140,10 @@ limitations under the License.</p>
 	<div class="literal">&#34;time&#34;</div><div class="operator"></div>
 
 	<div class="literal">&#34;github.com/RedHatInsights/insights-content-service/content&#34;</div><div class="operator"></div>
+	<div class="literal">&#34;github.com/google/uuid&#34;</div><div class="operator"></div>
+
 	<div class="literal">&#34;github.com/RedHatInsights/insights-operator-utils/tests/helpers&#34;</div><div class="operator"></div>
 	<div class="literal">&#34;github.com/RedHatInsights/insights-operator-utils/types&#34;</div><div class="operator"></div>
-	<div class="literal">&#34;github.com/google/uuid&#34;</div><div class="operator"></div>
 <div class="operator">)</div><div class="operator"></div>
 
 <div class="keyword">const</div> <div class="operator">(</div>
@@ -678,6 +679,7 @@ limitations under the License.</p>
 				&#34;key&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">ErrorKey2</div> <div class="operator">&#43;</div> <div class="literal">`&#34;,
 				&#34;user_vote&#34;: 0,
 				&#34;disabled&#34;: false,
+				&#34;disable_feedback&#34;: &#34;&#34;,
 				&#34;details&#34;: `</div> <div class="operator">&#43;</div> <div class="ident">helpers</div><div class="operator">.</div><div class="ident">ToJSONString</div><div class="operator">(</div><div class="ident">Rule2ExtraData</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`
 			},
 			{
@@ -685,6 +687,39 @@ limitations under the License.</p>
 				&#34;key&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">ErrorKey1</div> <div class="operator">&#43;</div> <div class="literal">`&#34;,
 				&#34;user_vote&#34;: 0,
 				&#34;disabled&#34;: true,
+				&#34;disable_feedback&#34;: &#34;&#34;,
+				&#34;details&#34;: `</div> <div class="operator">&#43;</div> <div class="ident">helpers</div><div class="operator">.</div><div class="ident">ToJSONString</div><div class="operator">(</div><div class="ident">Rule1ExtraData</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`
+			}
+		]
+	},
+	&#34;status&#34;: &#34;ok&#34;
+}
+`</div><div class="operator"></div>
+
+	<div class="ident">Report2RulesDisabledRule1WithFeedbackExpectedResponse</div> <div class="operator">=</div> <div class="literal">`
+{
+	&#34;report&#34;: {
+		&#34;meta&#34;: {
+			&#34;count&#34;: 2,
+			&#34;last_checked_at&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">LastCheckedAt</div><div class="operator">.</div><div class="ident">UTC</div><div class="operator">(</div><div class="operator">)</div><div class="operator">.</div><div class="ident">Format</div><div class="operator">(</div><div class="ident">time</div><div class="operator">.</div><div class="ident">RFC3339</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`&#34;
+		},
+		&#34;reports&#34;: [
+			{
+				&#34;component&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">string</div><div class="operator">(</div><div class="ident">Rule2ID</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`&#34;,
+				&#34;key&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">ErrorKey2</div> <div class="operator">&#43;</div> <div class="literal">`&#34;,
+				&#34;user_vote&#34;: 0,
+				&#34;disabled&#34;: false,
+				&#34;disabled_at&#34;: &#34;&#34;,
+				&#34;disable_feedback&#34;: &#34;&#34;,
+				&#34;details&#34;: `</div> <div class="operator">&#43;</div> <div class="ident">helpers</div><div class="operator">.</div><div class="ident">ToJSONString</div><div class="operator">(</div><div class="ident">Rule2ExtraData</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`
+			},
+			{
+				&#34;component&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">string</div><div class="operator">(</div><div class="ident">Rule1ID</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`&#34;,
+				&#34;key&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">ErrorKey1</div> <div class="operator">&#43;</div> <div class="literal">`&#34;,
+				&#34;user_vote&#34;: 0,
+				&#34;disabled&#34;: true,
+				&#34;disabled_at&#34;: &#34;&#34;,
+				&#34;disable_feedback&#34;: &#34;test&#34;,
 				&#34;details&#34;: `</div> <div class="operator">&#43;</div> <div class="ident">helpers</div><div class="operator">.</div><div class="ident">ToJSONString</div><div class="operator">(</div><div class="ident">Rule1ExtraData</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`
 			}
 		]
