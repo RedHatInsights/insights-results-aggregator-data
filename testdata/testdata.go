@@ -30,7 +30,7 @@ import (
 const (
 	// OrgID represents ID of the first organization in the system (ID=1)
 	OrgID            = types.OrgID(1)
-	Org2ID            = types.OrgID(2)
+	Org2ID           = types.OrgID(2)
 	ClusterName      = types.ClusterName("84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc")
 	UserID           = types.UserID("1")
 	User2ID          = types.UserID("2")
@@ -68,79 +68,6 @@ const (
 	Rule2Resolution  = "rule 2 resolution"
 	Rule3Resolution  = "rule 3 resolution"
 	Rule4Resolution  = "rule 4 resolution"
-	Rule1ExtraData   = `{
-		"degraded_operators": [
-			{
-				"available": {
-					"last_trans_time": "2020-04-21T12:45:10Z",
-					"message": "Available: 2 nodes are active; 1 nodes are at revision 0; 2 nodes are at revision 2; 0 nodes have achieved new revision 3",
-					"reason": "AsExpected",
-					"status": true
-				},
-				"degraded": {
-					"last_trans_time": "2020-04-21T12:46:14Z",
-					"message": "NodeControllerDegraded: All master nodes are ready\nStaticPodsDegraded: nodes/ip-10-0-137-172.us-east-2.compute.internal pods/kube-apiserver-ip-10-0-137-172.us-east-2.compute.internal container=\"kube-apiserver-3\" is not ready",
-					"reason": "NodeInstallerDegradedInstallerPodFailed",
-					"status": true
-				},
-				"name": "kube-apiserver",
-				"progressing": {
-					"last_trans_time": "2020-04-21T12:43:00Z",
-					"message": "Progressing: 1 nodes are at revision 0; 2 nodes are at revision 2; 0 nodes have achieved new revision 3",
-					"reason": null,
-					"status": true
-				},
-				"upgradeable": {
-					"last_trans_time": "2020-04-21T12:42:52Z",
-					"message": null,
-					"reason": "AsExpected",
-					"status": true
-				},
-				"version": "4.3.13"
-			}
-		],
-		"error_key": "NODE_INSTALLER_DEGRADED",
-		"type": "rule"
-	}`
-	Rule2ExtraData = `{
-        "nodes": [
-            {
-                "name": "foo1",
-                "role": "master",
-                "memory": 8.16,
-                "memory_req": 16
-            }
-        ],
-        "link": "https://docs.openshift.com/container-platform/4.1/installing/installing_bare_metal/installing-bare-metal.html#minimum-resource-requirements_installing-bare-metal",
-        "type": "rule",
-        "error_key": "NODES_MINIMUM_REQUIREMENTS_NOT_MET"
-    }`
-	Rule3ExtraData = `{
-	    "type": "rule",
-	    "error_key": "BUGZILLA_BUG_1766907"
-	}`
-	Rule4ExtraData = `{
-        "nodes_with_different_version": [
-            {
-                "Node": "oc1",
-                "Kubelet Version": "v1.14.6+0a21dd3b3",
-                "role": "worker"
-            },
-            {
-                "Node": "oc2",
-                "Kubelet Version": "v1.14.6+0a21dd3b3",
-                "role": "worker"
-            },
-            {
-                "Node": "oc3",
-                "Kubelet Version": "v1.14.6+d39ad8449",
-                "role": "worker"
-            }
-        ],
-        "kcs_link": "https://access.redhat.com/solutions/4602641",
-        "type": "rule",
-        "error_key": "NODE_KUBELET_VERSION"
-    }`
 	Rule1Disabled      = false
 	Rule2Disabled      = false
 	Rule3Disabled      = false
@@ -157,7 +84,7 @@ var (
 		Summary:    Rule1Summary,
 		Reason:     Rule1Reason,
 		Resolution: Rule1Resolution,
-		MoreInfo:   Rule1ExtraData,
+		MoreInfo:   toJSON(Rule1ExtraData),
 	}
 	Rule2 = types.Rule{
 		Module:     Rule2ID,
@@ -165,7 +92,7 @@ var (
 		Summary:    Rule2Summary,
 		Reason:     Rule2Reason,
 		Resolution: Rule2Resolution,
-		MoreInfo:   Rule2ExtraData,
+		MoreInfo:   toJSON(Rule2ExtraData),
 	}
 	Rule3 = types.Rule{
 		Module:     Rule3ID,
@@ -173,7 +100,7 @@ var (
 		Summary:    Rule3Summary,
 		Reason:     Rule3Reason,
 		Resolution: Rule3Resolution,
-		MoreInfo:   Rule3ExtraData,
+		MoreInfo:   toJSON(Rule3ExtraData),
 	}
 	Rule4 = types.Rule{
 		Module:     Rule4ID,
@@ -181,20 +108,24 @@ var (
 		Summary:    Rule4Summary,
 		Reason:     Rule4Reason,
 		Resolution: Rule4Resolution,
-		MoreInfo:   Rule4ExtraData,
+		MoreInfo:   toJSON(Rule4ExtraData),
 	}
 	RuleOnReport1 = types.RuleOnReport{
-		Module:       Rule1.Module,
-		ErrorKey:     RuleErrorKey1.ErrorKey,
-		UserVote:     types.UserVoteNone,
-		Disabled:     Rule1Disabled,
-		TemplateData: Rule1ExtraData,
+		Module:          Rule1.Module,
+		ErrorKey:        RuleErrorKey1.ErrorKey,
+		UserVote:        types.UserVoteNone,
+		Disabled:        Rule1Disabled,
+		DisableFeedback: "",
+		DisabledAt:      "",
+		TemplateData:    Rule1ExtraData,
 	}
 	RuleOnReport2 = types.RuleOnReport{
 		Module:       Rule2.Module,
 		ErrorKey:     RuleErrorKey2.ErrorKey,
 		UserVote:     types.UserVoteNone,
 		Disabled:     Rule2Disabled,
+		DisableFeedback: "",
+		DisabledAt:      "",
 		TemplateData: Rule2ExtraData,
 	}
 	RuleOnReport3 = types.RuleOnReport{
@@ -202,6 +133,8 @@ var (
 		ErrorKey:     RuleErrorKey3.ErrorKey,
 		UserVote:     types.UserVoteNone,
 		Disabled:     Rule3Disabled,
+		DisableFeedback: "",
+		DisabledAt:      "",
 		TemplateData: Rule3ExtraData,
 	}
 	RuleContent1 = content.RuleContent{
@@ -402,6 +335,79 @@ var (
 		Generic:     RuleErrorKey3.Generic,
 		Tags:        []string{},
 	}
+	Rule1ExtraData   = stringToJSONRawMessage(`{
+		"degraded_operators": [
+			{
+				"available": {
+					"last_trans_time": "2020-04-21T12:45:10Z",
+					"message": "Available: 2 nodes are active; 1 nodes are at revision 0; 2 nodes are at revision 2; 0 nodes have achieved new revision 3",
+					"reason": "AsExpected",
+					"status": true
+				},
+				"degraded": {
+					"last_trans_time": "2020-04-21T12:46:14Z",
+					"message": "NodeControllerDegraded: All master nodes are ready\nStaticPodsDegraded: nodes/ip-10-0-137-172.us-east-2.compute.internal pods/kube-apiserver-ip-10-0-137-172.us-east-2.compute.internal container=\"kube-apiserver-3\" is not ready",
+					"reason": "NodeInstallerDegradedInstallerPodFailed",
+					"status": true
+				},
+				"name": "kube-apiserver",
+				"progressing": {
+					"last_trans_time": "2020-04-21T12:43:00Z",
+					"message": "Progressing: 1 nodes are at revision 0; 2 nodes are at revision 2; 0 nodes have achieved new revision 3",
+					"reason": null,
+					"status": true
+				},
+				"upgradeable": {
+					"last_trans_time": "2020-04-21T12:42:52Z",
+					"message": null,
+					"reason": "AsExpected",
+					"status": true
+				},
+				"version": "4.3.13"
+			}
+		],
+		"error_key": "NODE_INSTALLER_DEGRADED",
+		"type": "rule"
+	}`)
+	Rule2ExtraData = stringToJSONRawMessage(`{
+        "nodes": [
+            {
+                "name": "foo1",
+                "role": "master",
+                "memory": 8.16,
+                "memory_req": 16
+            }
+        ],
+        "link": "https://docs.openshift.com/container-platform/4.1/installing/installing_bare_metal/installing-bare-metal.html#minimum-resource-requirements_installing-bare-metal",
+        "type": "rule",
+        "error_key": "NODES_MINIMUM_REQUIREMENTS_NOT_MET"
+    }`)
+	Rule3ExtraData = stringToJSONRawMessage(`{
+	    "type": "rule",
+	    "error_key": "BUGZILLA_BUG_1766907"
+	}`)
+	Rule4ExtraData = stringToJSONRawMessage(`{
+        "nodes_with_different_version": [
+            {
+                "Node": "oc1",
+                "Kubelet Version": "v1.14.6+0a21dd3b3",
+                "role": "worker"
+            },
+            {
+                "Node": "oc2",
+                "Kubelet Version": "v1.14.6+0a21dd3b3",
+                "role": "worker"
+            },
+            {
+                "Node": "oc3",
+                "Kubelet Version": "v1.14.6+d39ad8449",
+                "role": "worker"
+            }
+        ],
+        "kcs_link": "https://access.redhat.com/solutions/4602641",
+        "type": "rule",
+        "error_key": "NODE_KUBELET_VERSION"
+    }`)
 	ConsumerReport = `{
 		"fingerprints": [],
 		"info": [],
@@ -659,29 +665,29 @@ var (
 {
 	"reports": [
 		{
-			"rule_id": "` + Rule1ID + "|" + ErrorKey1 + `",
-			"component": "` + Rule1ID + `",
+			"rule_id": "` + string(Rule1ID) + "|" + ErrorKey1 + `",
+			"component": "` + string(Rule1ID) + `",
 			"type": "rule",
 			"key": "` + ErrorKey1 + `",
-			"details": ` + Rule1ExtraData + `,
+			"details": ` + toJSON(Rule1ExtraData) + `,
 			"tags": [],
 			"links": {}
 		},
 		{
-			"rule_id": "` + Rule2ID + "|" + ErrorKey2 + `",
-			"component": "` + Rule2ID + `",
+			"rule_id": "` + string(Rule2ID) + "|" + ErrorKey2 + `",
+			"component": "` + string(Rule2ID) + `",
 			"type": "rule",
 			"key": "` + ErrorKey2 + `",
-			"details": ` + Rule2ExtraData + `,
+			"details": ` + toJSON(Rule2ExtraData) + `,
 			"tags": [],
 			"links": {}
 		},
 		{
-			"rule_id": "` + Rule3ID + "|" + ErrorKey3 + `",
-			"component": "` + Rule3ID + `",
+			"rule_id": "` + string(Rule3ID) + "|" + ErrorKey3 + `",
+			"component": "` + string(Rule3ID) + `",
 			"type": "rule",
 			"key": "` + ErrorKey3 + `",
-			"details": ` + Rule3ExtraData + `,
+			"details": ` + toJSON(Rule3ExtraData) + `,
 			"tags": [],
 			"links": {}
 		}
@@ -866,4 +872,16 @@ func toJSON(obj interface{}) string {
 	}
 
 	return string(jsonBytes)
+}
+
+// TODO: move to utils
+func stringToJSONRawMessage(obj string) json.RawMessage {
+	var res json.RawMessage
+
+	err := json.Unmarshal([]byte(obj), &res)
+	if err != nil {
+		panic(err)
+	}
+
+	return res
 }
