@@ -29,45 +29,45 @@ import (
 
 const (
 	// OrgID represents ID of the first organization in the system (ID=1)
-	OrgID            = types.OrgID(1)
-	Org2ID           = types.OrgID(2)
-	ClusterName      = types.ClusterName("84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc")
-	UserID           = types.UserID("1")
-	User2ID          = types.UserID("2")
-	BadClusterName   = types.ClusterName("aaaa")
-	Rule1ID          = types.RuleID("ccx_rules_ocp.external.rules.node_installer_degraded")
-	BadRuleID        = types.RuleID("rule id with spaces")
-	Rule2ID          = types.RuleID("test.rule2")
-	Rule3ID          = types.RuleID("test.rule3")
-	Rule4ID          = types.RuleID("test.rule4")
-	Rule1Name        = "rule 1 name"
-	Rule2Name        = "rule 2 name"
-	Rule3Name        = "rule 3 name"
-	Rule4Name        = "rule 4 name"
-	ErrorKey1        = "ek1"
-	ErrorKey2        = "ek2"
-	ErrorKey3        = "ek3"
-	ErrorKey4        = "ek4"
-	Rule1Description = "Clusteroperator is degraded when the installer pods are removed too soon during upgrade"
-	Rule2Description = "rule 2 description"
-	Rule3Description = "rule 3 description"
-	Rule4Description = "rule 4 description"
-	Rule1CreatedAt   = "2020-03-06T12:00:00Z"
-	Rule2CreatedAt   = "1970-01-02T00:00:00Z"
-	Rule3CreatedAt   = "1970-01-03T00:00:00Z"
-	Rule4CreatedAt   = "1970-01-03T00:00:00Z"
-	Rule1Summary     = "rule 1 summary"
-	Rule2Summary     = "rule 2 summary"
-	Rule3Summary     = "rule 3 summary"
-	Rule4Summary     = "rule 4 summary"
-	Rule1Reason      = "Clusteroperator{{?pydata.degraded_operators.length>1}}s{{?}} degraded with NodeInstallerDegraded in reason:\n\n{{~ pydata.degraded_operators :operator }}\n**Cluster-operator:**  **{{=operator[\"name\"]}}**\n- *Reason:* {{=operator[\"degraded\"][\"reason\"]}}\n- *Message:* {{=operator[\"degraded\"][\"message\"]}}\n- *Last transition*: {{=operator[\"degraded\"][\"last_trans_time\"]}}\n\n{{~}}\n"
-	Rule2Reason      = "rule 2 reason"
-	Rule3Reason      = "rule 3 reason"
-	Rule4Reason      = "rule 4 reason"
-	Rule1Resolution  = "You may be hitting a [known bug](https://bugzilla.redhat.com/show_bug.cgi?id=1723966) and Red Hat recommends that you complete the following steps:\n\n{{~ pydata.degraded_operators :operator }}\n{{? operator[\"name\"] == \"kube-apiserver\"}}\n- For the **kube-apiserver** clusteroperator do:\n~~~\noc patch kubeapiserver/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-controller-manager\"}}\n- For the **kube-controller-manager** clusteroperator do:\n~~~\noc patch kubecontrollermanager/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-scheduler\"}}\n- For the **kube-scheduler** clusteroperator do:\n~~~\noc patch kubescheduler/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\nThen wait several minutes and check if the operator is no longer degraded or progressing. If it is still degraded and the same error message is shown, retry (the race condition can be triggered again). If the error message is different or some retries do not make any improvement, open a support case to get further assistance.\n\nIf this solution solves your issue, but you are interested in tracking the definitive resolution of the bug, you can open a support case to do that as well.\n{{~}}"
-	Rule2Resolution  = "rule 2 resolution"
-	Rule3Resolution  = "rule 3 resolution"
-	Rule4Resolution  = "rule 4 resolution"
+	OrgID              = types.OrgID(1)
+	Org2ID             = types.OrgID(2)
+	ClusterName        = types.ClusterName("84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc")
+	UserID             = types.UserID("1")
+	User2ID            = types.UserID("2")
+	BadClusterName     = types.ClusterName("aaaa")
+	Rule1ID            = types.RuleID("ccx_rules_ocp.external.rules.node_installer_degraded")
+	BadRuleID          = types.RuleID("rule id with spaces")
+	Rule2ID            = types.RuleID("test.rule2")
+	Rule3ID            = types.RuleID("test.rule3")
+	Rule4ID            = types.RuleID("test.rule4")
+	Rule1Name          = "rule 1 name"
+	Rule2Name          = "rule 2 name"
+	Rule3Name          = "rule 3 name"
+	Rule4Name          = "rule 4 name"
+	ErrorKey1          = "ek1"
+	ErrorKey2          = "ek2"
+	ErrorKey3          = "ek3"
+	ErrorKey4          = "ek4"
+	Rule1Description   = "Clusteroperator is degraded when the installer pods are removed too soon during upgrade"
+	Rule2Description   = "rule 2 description"
+	Rule3Description   = "rule 3 description"
+	Rule4Description   = "rule 4 description"
+	Rule1CreatedAt     = "2020-03-06T12:00:00Z"
+	Rule2CreatedAt     = "1970-01-02T00:00:00Z"
+	Rule3CreatedAt     = "1970-01-03T00:00:00Z"
+	Rule4CreatedAt     = "1970-01-03T00:00:00Z"
+	Rule1Summary       = "rule 1 summary"
+	Rule2Summary       = "rule 2 summary"
+	Rule3Summary       = "rule 3 summary"
+	Rule4Summary       = "rule 4 summary"
+	Rule1Reason        = "Clusteroperator{{?pydata.degraded_operators.length>1}}s{{?}} degraded with NodeInstallerDegraded in reason:\n\n{{~ pydata.degraded_operators :operator }}\n**Cluster-operator:**  **{{=operator[\"name\"]}}**\n- *Reason:* {{=operator[\"degraded\"][\"reason\"]}}\n- *Message:* {{=operator[\"degraded\"][\"message\"]}}\n- *Last transition*: {{=operator[\"degraded\"][\"last_trans_time\"]}}\n\n{{~}}\n"
+	Rule2Reason        = "rule 2 reason"
+	Rule3Reason        = "rule 3 reason"
+	Rule4Reason        = "rule 4 reason"
+	Rule1Resolution    = "You may be hitting a [known bug](https://bugzilla.redhat.com/show_bug.cgi?id=1723966) and Red Hat recommends that you complete the following steps:\n\n{{~ pydata.degraded_operators :operator }}\n{{? operator[\"name\"] == \"kube-apiserver\"}}\n- For the **kube-apiserver** clusteroperator do:\n~~~\noc patch kubeapiserver/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-controller-manager\"}}\n- For the **kube-controller-manager** clusteroperator do:\n~~~\noc patch kubecontrollermanager/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-scheduler\"}}\n- For the **kube-scheduler** clusteroperator do:\n~~~\noc patch kubescheduler/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\nThen wait several minutes and check if the operator is no longer degraded or progressing. If it is still degraded and the same error message is shown, retry (the race condition can be triggered again). If the error message is different or some retries do not make any improvement, open a support case to get further assistance.\n\nIf this solution solves your issue, but you are interested in tracking the definitive resolution of the bug, you can open a support case to do that as well.\n{{~}}"
+	Rule2Resolution    = "rule 2 resolution"
+	Rule3Resolution    = "rule 3 resolution"
+	Rule4Resolution    = "rule 4 resolution"
 	Rule1Disabled      = false
 	Rule2Disabled      = false
 	Rule3Disabled      = false
@@ -120,22 +120,22 @@ var (
 		TemplateData:    Rule1ExtraData,
 	}
 	RuleOnReport2 = types.RuleOnReport{
-		Module:       Rule2.Module,
-		ErrorKey:     RuleErrorKey2.ErrorKey,
-		UserVote:     types.UserVoteNone,
-		Disabled:     Rule2Disabled,
+		Module:          Rule2.Module,
+		ErrorKey:        RuleErrorKey2.ErrorKey,
+		UserVote:        types.UserVoteNone,
+		Disabled:        Rule2Disabled,
 		DisableFeedback: "",
 		DisabledAt:      "",
-		TemplateData: Rule2ExtraData,
+		TemplateData:    Rule2ExtraData,
 	}
 	RuleOnReport3 = types.RuleOnReport{
-		Module:       Rule3.Module,
-		ErrorKey:     RuleErrorKey3.ErrorKey,
-		UserVote:     types.UserVoteNone,
-		Disabled:     Rule3Disabled,
+		Module:          Rule3.Module,
+		ErrorKey:        RuleErrorKey3.ErrorKey,
+		UserVote:        types.UserVoteNone,
+		Disabled:        Rule3Disabled,
 		DisableFeedback: "",
 		DisabledAt:      "",
-		TemplateData: Rule3ExtraData,
+		TemplateData:    Rule3ExtraData,
 	}
 	RuleContent1 = content.RuleContent{
 		Summary:    Rule1.Summary,
@@ -335,7 +335,7 @@ var (
 		Generic:     RuleErrorKey3.Generic,
 		Tags:        []string{},
 	}
-	Rule1ExtraData   = stringToJSONRawMessage(`{
+	Rule1ExtraData = stringToJSONRawMessage(`{
 		"degraded_operators": [
 			{
 				"available": {
@@ -764,6 +764,13 @@ var (
 		  "status": "ok"
 		}
 	`
+	Report3SingleRuleExpectedResponse = `
+		{
+			"report": ` + toJSON(RuleOnReport1) + `,
+			"status": "ok"
+		}
+	`
+
 	ImpactStrToInt = map[string]int{
 		"Zero":  0,
 		"One":   1,
