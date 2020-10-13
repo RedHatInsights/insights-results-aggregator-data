@@ -53,6 +53,8 @@
                 "details": "All: ['ccx_rules_ocp.ocs.ceph_check_mon_clock_skew.get_mon_reporting_clock_skew'] Any: ",
                 "type": "skip"
             }
-        ]
+        ],
+        "info": [],
+        "pass": []
     }
 }
