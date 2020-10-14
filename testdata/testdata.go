@@ -20,7 +20,6 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/RedHatInsights/insights-content-service/content"
 	"github.com/google/uuid"
 
 	"github.com/RedHatInsights/insights-operator-utils/tests/helpers"
@@ -137,21 +136,21 @@ var (
 		DisabledAt:      "",
 		TemplateData:    Rule3ExtraData,
 	}
-	RuleContent1 = content.RuleContent{
+	RuleContent1 = types.RuleContent{
 		Summary:    Rule1.Summary,
 		Reason:     Rule1.Reason,
 		Resolution: Rule1.Resolution,
 		MoreInfo:   Rule1.MoreInfo,
-		Plugin: content.RulePluginInfo{
+		Plugin: types.RulePluginInfo{
 			Name:         Rule1.Name,
 			NodeID:       "",
 			ProductCode:  "",
 			PythonModule: string(Rule1.Module),
 		},
-		ErrorKeys: map[string]content.RuleErrorKeyContent{
+		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			"ek1": {
 				Generic: RuleErrorKey1.Generic,
-				Metadata: content.ErrorKeyMetadata{
+				Metadata: types.ErrorKeyMetadata{
 					Condition:   RuleErrorKey1.Condition,
 					Description: RuleErrorKey1.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey1.Impact],
@@ -163,21 +162,21 @@ var (
 			},
 		},
 	}
-	RuleContent2 = content.RuleContent{
+	RuleContent2 = types.RuleContent{
 		Summary:    Rule2.Summary,
 		Reason:     Rule2.Reason,
 		Resolution: Rule2.Resolution,
 		MoreInfo:   Rule2.MoreInfo,
-		Plugin: content.RulePluginInfo{
+		Plugin: types.RulePluginInfo{
 			Name:         Rule2.Name,
 			NodeID:       "",
 			ProductCode:  "",
 			PythonModule: string(Rule2.Module),
 		},
-		ErrorKeys: map[string]content.RuleErrorKeyContent{
+		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			"ek2": {
 				Generic: RuleErrorKey2.Generic,
-				Metadata: content.ErrorKeyMetadata{
+				Metadata: types.ErrorKeyMetadata{
 					Condition:   RuleErrorKey2.Condition,
 					Description: RuleErrorKey2.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey2.Impact],
@@ -189,21 +188,21 @@ var (
 			},
 		},
 	}
-	RuleContent3 = content.RuleContent{
+	RuleContent3 = types.RuleContent{
 		Summary:    Rule3.Summary,
 		Reason:     Rule3.Reason,
 		Resolution: Rule3.Resolution,
 		MoreInfo:   Rule3.MoreInfo,
-		Plugin: content.RulePluginInfo{
+		Plugin: types.RulePluginInfo{
 			Name:         Rule3.Name,
 			NodeID:       "",
 			ProductCode:  "",
 			PythonModule: string(Rule3.Module),
 		},
-		ErrorKeys: map[string]content.RuleErrorKeyContent{
+		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			"ek3": {
 				Generic: RuleErrorKey3.Generic,
-				Metadata: content.ErrorKeyMetadata{
+				Metadata: types.ErrorKeyMetadata{
 					Condition:   RuleErrorKey3.Condition,
 					Description: RuleErrorKey3.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey3.Impact],
@@ -215,21 +214,21 @@ var (
 			},
 		},
 	}
-	RuleContent4 = content.RuleContent{
+	RuleContent4 = types.RuleContent{
 		Summary:    Rule4.Summary,
 		Reason:     Rule4.Reason,
 		Resolution: Rule4.Resolution,
 		MoreInfo:   Rule4.MoreInfo,
-		Plugin: content.RulePluginInfo{
+		Plugin: types.RulePluginInfo{
 			Name:         Rule4.Name,
 			NodeID:       "",
 			ProductCode:  "",
 			PythonModule: string(Rule4.Module),
 		},
-		ErrorKeys: map[string]content.RuleErrorKeyContent{
+		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			ErrorKey4: {
 				Generic: RuleErrorKey4.Generic,
-				Metadata: content.ErrorKeyMetadata{
+				Metadata: types.ErrorKeyMetadata{
 					Condition:   RuleErrorKey4.Condition,
 					Description: RuleErrorKey4.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey4.Impact],
@@ -422,11 +421,11 @@ var (
 		"LastChecked": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 	}`
 	LastCheckedAt              = time.Unix(25, 0).UTC()
-	RuleContentDirectory3Rules = content.RuleContentDirectory{
-		Config: content.GlobalRuleConfig{
+	RuleContentDirectory3Rules = types.RuleContentDirectory{
+		Config: types.GlobalRuleConfig{
 			Impact: ImpactStrToInt,
 		},
-		Rules: map[string]content.RuleContent{
+		Rules: map[string]types.RuleContent{
 			"rc1": RuleContent1,
 			"rc2": RuleContent2,
 			"rc3": RuleContent3,

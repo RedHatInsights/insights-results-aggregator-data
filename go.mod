@@ -3,10 +3,7 @@ module github.com/RedHatInsights/insights-results-aggregator-data
 go 1.14
 
 require (
-	github.com/RedHatInsights/insights-content-service v0.0.0-20201006090430-1fa402db0eb8
 	github.com/RedHatInsights/insights-operator-utils v1.6.2
-	github.com/Shopify/sarama v1.27.0 // indirect
-	github.com/aws/aws-sdk-go v1.35.3 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/getkin/kin-openapi v0.22.1 // indirect
 	github.com/golang/snappy v0.0.2 // indirect
