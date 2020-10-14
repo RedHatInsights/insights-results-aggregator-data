@@ -84,7 +84,7 @@ var (
 		Summary:    Rule1Summary,
 		Reason:     Rule1Reason,
 		Resolution: Rule1Resolution,
-		MoreInfo:   toJSON(Rule1ExtraData),
+		MoreInfo:   Rule1ExtraData,
 	}
 	Rule2 = types.Rule{
 		Module:     Rule2ID,
@@ -92,7 +92,7 @@ var (
 		Summary:    Rule2Summary,
 		Reason:     Rule2Reason,
 		Resolution: Rule2Resolution,
-		MoreInfo:   toJSON(Rule2ExtraData),
+		MoreInfo:   Rule2ExtraData,
 	}
 	Rule3 = types.Rule{
 		Module:     Rule3ID,
@@ -100,7 +100,7 @@ var (
 		Summary:    Rule3Summary,
 		Reason:     Rule3Reason,
 		Resolution: Rule3Resolution,
-		MoreInfo:   toJSON(Rule3ExtraData),
+		MoreInfo:   Rule3ExtraData,
 	}
 	Rule4 = types.Rule{
 		Module:     Rule4ID,
@@ -108,7 +108,7 @@ var (
 		Summary:    Rule4Summary,
 		Reason:     Rule4Reason,
 		Resolution: Rule4Resolution,
-		MoreInfo:   toJSON(Rule4ExtraData),
+		MoreInfo:   Rule4ExtraData,
 	}
 	RuleOnReport1 = types.RuleOnReport{
 		Module:          Rule1.Module,
