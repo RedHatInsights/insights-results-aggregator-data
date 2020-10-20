@@ -250,7 +250,7 @@ var (
 		PublishDate: LastCheckedAt,
 		Active:      false,
 		Generic:     "generic1",
-		Tags:        []string{"openshift", "service_availability"},
+		Tags:        []string{"openshift", "service_availability", "osd_customer"},
 	}
 	RuleErrorKey2 = types.RuleErrorKey{
 		ErrorKey:    "ek2",
@@ -766,6 +766,13 @@ var (
 	Report3SingleRuleExpectedResponse = `
 		{
 			"report": ` + toJSON(RuleOnReport1) + `,
+			"status": "ok"
+		}
+	`
+
+	Report3SingleRule2ExpectedResponse = `
+		{
+			"report": ` + toJSON(RuleOnReport2) + `,
 			"status": "ok"
 		}
 	`
