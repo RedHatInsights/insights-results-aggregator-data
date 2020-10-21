@@ -139,7 +139,6 @@ limitations under the License.</p>
 	<div class="literal">&#34;math/rand&#34;</div><div class="operator"></div>
 	<div class="literal">&#34;time&#34;</div><div class="operator"></div>
 
-	<div class="literal">&#34;github.com/RedHatInsights/insights-content-service/content&#34;</div><div class="operator"></div>
 	<div class="literal">&#34;github.com/google/uuid&#34;</div><div class="operator"></div>
 
 	<div class="literal">&#34;github.com/RedHatInsights/insights-operator-utils/tests/helpers&#34;</div><div class="operator"></div>
@@ -153,45 +152,45 @@ limitations under the License.</p>
       <tr class="section">
 	<td class="doc"><p>OrgID represents ID of the first organization in the system (ID=1)</p>
 </td>
-	<td class="code"><pre><code>	<div class="ident">OrgID</div>            <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">OrgID</div><div class="operator">(</div><div class="literal">1</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">Org2ID</div>           <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">OrgID</div><div class="operator">(</div><div class="literal">2</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">ClusterName</div>      <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ClusterName</div><div class="operator">(</div><div class="literal">&#34;84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">UserID</div>           <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">UserID</div><div class="operator">(</div><div class="literal">&#34;1&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">User2ID</div>          <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">UserID</div><div class="operator">(</div><div class="literal">&#34;2&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">BadClusterName</div>   <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ClusterName</div><div class="operator">(</div><div class="literal">&#34;aaaa&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">Rule1ID</div>          <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;ccx_rules_ocp.external.rules.node_installer_degraded&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">BadRuleID</div>        <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;rule id with spaces&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">Rule2ID</div>          <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;test.rule2&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">Rule3ID</div>          <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;test.rule3&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">Rule4ID</div>          <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;test.rule4&#34;</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">Rule1Name</div>        <div class="operator">=</div> <div class="literal">&#34;rule 1 name&#34;</div><div class="operator"></div>
-	<div class="ident">Rule2Name</div>        <div class="operator">=</div> <div class="literal">&#34;rule 2 name&#34;</div><div class="operator"></div>
-	<div class="ident">Rule3Name</div>        <div class="operator">=</div> <div class="literal">&#34;rule 3 name&#34;</div><div class="operator"></div>
-	<div class="ident">Rule4Name</div>        <div class="operator">=</div> <div class="literal">&#34;rule 4 name&#34;</div><div class="operator"></div>
-	<div class="ident">ErrorKey1</div>        <div class="operator">=</div> <div class="literal">&#34;ek1&#34;</div><div class="operator"></div>
-	<div class="ident">ErrorKey2</div>        <div class="operator">=</div> <div class="literal">&#34;ek2&#34;</div><div class="operator"></div>
-	<div class="ident">ErrorKey3</div>        <div class="operator">=</div> <div class="literal">&#34;ek3&#34;</div><div class="operator"></div>
-	<div class="ident">ErrorKey4</div>        <div class="operator">=</div> <div class="literal">&#34;ek4&#34;</div><div class="operator"></div>
-	<div class="ident">Rule1Description</div> <div class="operator">=</div> <div class="literal">&#34;Clusteroperator is degraded when the installer pods are removed too soon during upgrade&#34;</div><div class="operator"></div>
-	<div class="ident">Rule2Description</div> <div class="operator">=</div> <div class="literal">&#34;rule 2 description&#34;</div><div class="operator"></div>
-	<div class="ident">Rule3Description</div> <div class="operator">=</div> <div class="literal">&#34;rule 3 description&#34;</div><div class="operator"></div>
-	<div class="ident">Rule4Description</div> <div class="operator">=</div> <div class="literal">&#34;rule 4 description&#34;</div><div class="operator"></div>
-	<div class="ident">Rule1CreatedAt</div>   <div class="operator">=</div> <div class="literal">&#34;2020-03-06T12:00:00Z&#34;</div><div class="operator"></div>
-	<div class="ident">Rule2CreatedAt</div>   <div class="operator">=</div> <div class="literal">&#34;1970-01-02T00:00:00Z&#34;</div><div class="operator"></div>
-	<div class="ident">Rule3CreatedAt</div>   <div class="operator">=</div> <div class="literal">&#34;1970-01-03T00:00:00Z&#34;</div><div class="operator"></div>
-	<div class="ident">Rule4CreatedAt</div>   <div class="operator">=</div> <div class="literal">&#34;1970-01-03T00:00:00Z&#34;</div><div class="operator"></div>
-	<div class="ident">Rule1Summary</div>     <div class="operator">=</div> <div class="literal">&#34;rule 1 summary&#34;</div><div class="operator"></div>
-	<div class="ident">Rule2Summary</div>     <div class="operator">=</div> <div class="literal">&#34;rule 2 summary&#34;</div><div class="operator"></div>
-	<div class="ident">Rule3Summary</div>     <div class="operator">=</div> <div class="literal">&#34;rule 3 summary&#34;</div><div class="operator"></div>
-	<div class="ident">Rule4Summary</div>     <div class="operator">=</div> <div class="literal">&#34;rule 4 summary&#34;</div><div class="operator"></div>
-	<div class="ident">Rule1Reason</div>      <div class="operator">=</div> <div class="literal">&#34;Clusteroperator{{?pydata.degraded_operators.length&gt;1}}s{{?}} degraded with NodeInstallerDegraded in reason:\n\n{{~ pydata.degraded_operators :operator }}\n**Cluster-operator:**  **{{=operator[\&#34;name\&#34;]}}**\n- *Reason:* {{=operator[\&#34;degraded\&#34;][\&#34;reason\&#34;]}}\n- *Message:* {{=operator[\&#34;degraded\&#34;][\&#34;message\&#34;]}}\n- *Last transition*: {{=operator[\&#34;degraded\&#34;][\&#34;last_trans_time\&#34;]}}\n\n{{~}}\n&#34;</div><div class="operator"></div>
-	<div class="ident">Rule2Reason</div>      <div class="operator">=</div> <div class="literal">&#34;rule 2 reason&#34;</div><div class="operator"></div>
-	<div class="ident">Rule3Reason</div>      <div class="operator">=</div> <div class="literal">&#34;rule 3 reason&#34;</div><div class="operator"></div>
-	<div class="ident">Rule4Reason</div>      <div class="operator">=</div> <div class="literal">&#34;rule 4 reason&#34;</div><div class="operator"></div>
-	<div class="ident">Rule1Resolution</div>  <div class="operator">=</div> <div class="literal">&#34;You may be hitting a [known bug](https://bugzilla.redhat.com/show_bug.cgi?id=1723966) and Red Hat recommends that you complete the following steps:\n\n{{~ pydata.degraded_operators :operator }}\n{{? operator[\&#34;name\&#34;] == \&#34;kube-apiserver\&#34;}}\n- For the **kube-apiserver** clusteroperator do:\n~~~\noc patch kubeapiserver/cluster --type merge -p \&#34;{\\\&#34;spec\\\&#34;:{\\\&#34;forceRedeploymentReason\\\&#34;:\\\&#34;Forcing new revision with random number $RANDOM to make message unique\\\&#34;}}\&#34;\n~~~\n{{?}}\n{{? operator[\&#34;name\&#34;] == \&#34;kube-controller-manager\&#34;}}\n- For the **kube-controller-manager** clusteroperator do:\n~~~\noc patch kubecontrollermanager/cluster --type merge -p \&#34;{\\\&#34;spec\\\&#34;:{\\\&#34;forceRedeploymentReason\\\&#34;:\\\&#34;Forcing new revision with random number $RANDOM to make message unique\\\&#34;}}\&#34;\n~~~\n{{?}}\n{{? operator[\&#34;name\&#34;] == \&#34;kube-scheduler\&#34;}}\n- For the **kube-scheduler** clusteroperator do:\n~~~\noc patch kubescheduler/cluster --type merge -p \&#34;{\\\&#34;spec\\\&#34;:{\\\&#34;forceRedeploymentReason\\\&#34;:\\\&#34;Forcing new revision with random number $RANDOM to make message unique\\\&#34;}}\&#34;\n~~~\n{{?}}\nThen wait several minutes and check if the operator is no longer degraded or progressing. If it is still degraded and the same error message is shown, retry (the race condition can be triggered again). If the error message is different or some retries do not make any improvement, open a support case to get further assistance.\n\nIf this solution solves your issue, but you are interested in tracking the definitive resolution of the bug, you can open a support case to do that as well.\n{{~}}&#34;</div><div class="operator"></div>
-	<div class="ident">Rule2Resolution</div>  <div class="operator">=</div> <div class="literal">&#34;rule 2 resolution&#34;</div><div class="operator"></div>
-	<div class="ident">Rule3Resolution</div>  <div class="operator">=</div> <div class="literal">&#34;rule 3 resolution&#34;</div><div class="operator"></div>
-	<div class="ident">Rule4Resolution</div>  <div class="operator">=</div> <div class="literal">&#34;rule 4 resolution&#34;</div><div class="operator"></div>
+	<td class="code"><pre><code>	<div class="ident">OrgID</div>              <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">OrgID</div><div class="operator">(</div><div class="literal">1</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">Org2ID</div>             <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">OrgID</div><div class="operator">(</div><div class="literal">2</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">ClusterName</div>        <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ClusterName</div><div class="operator">(</div><div class="literal">&#34;84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">UserID</div>             <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">UserID</div><div class="operator">(</div><div class="literal">&#34;1&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">User2ID</div>            <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">UserID</div><div class="operator">(</div><div class="literal">&#34;2&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">BadClusterName</div>     <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ClusterName</div><div class="operator">(</div><div class="literal">&#34;aaaa&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">Rule1ID</div>            <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;ccx_rules_ocp.external.rules.node_installer_degraded&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">BadRuleID</div>          <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;rule id with spaces&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">Rule2ID</div>            <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;test.rule2&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">Rule3ID</div>            <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;test.rule3&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">Rule4ID</div>            <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleID</div><div class="operator">(</div><div class="literal">&#34;test.rule4&#34;</div><div class="operator">)</div><div class="operator"></div>
+	<div class="ident">Rule1Name</div>          <div class="operator">=</div> <div class="literal">&#34;rule 1 name&#34;</div><div class="operator"></div>
+	<div class="ident">Rule2Name</div>          <div class="operator">=</div> <div class="literal">&#34;rule 2 name&#34;</div><div class="operator"></div>
+	<div class="ident">Rule3Name</div>          <div class="operator">=</div> <div class="literal">&#34;rule 3 name&#34;</div><div class="operator"></div>
+	<div class="ident">Rule4Name</div>          <div class="operator">=</div> <div class="literal">&#34;rule 4 name&#34;</div><div class="operator"></div>
+	<div class="ident">ErrorKey1</div>          <div class="operator">=</div> <div class="literal">&#34;ek1&#34;</div><div class="operator"></div>
+	<div class="ident">ErrorKey2</div>          <div class="operator">=</div> <div class="literal">&#34;ek2&#34;</div><div class="operator"></div>
+	<div class="ident">ErrorKey3</div>          <div class="operator">=</div> <div class="literal">&#34;ek3&#34;</div><div class="operator"></div>
+	<div class="ident">ErrorKey4</div>          <div class="operator">=</div> <div class="literal">&#34;ek4&#34;</div><div class="operator"></div>
+	<div class="ident">Rule1Description</div>   <div class="operator">=</div> <div class="literal">&#34;Clusteroperator is degraded when the installer pods are removed too soon during upgrade&#34;</div><div class="operator"></div>
+	<div class="ident">Rule2Description</div>   <div class="operator">=</div> <div class="literal">&#34;rule 2 description&#34;</div><div class="operator"></div>
+	<div class="ident">Rule3Description</div>   <div class="operator">=</div> <div class="literal">&#34;rule 3 description&#34;</div><div class="operator"></div>
+	<div class="ident">Rule4Description</div>   <div class="operator">=</div> <div class="literal">&#34;rule 4 description&#34;</div><div class="operator"></div>
+	<div class="ident">Rule1CreatedAt</div>     <div class="operator">=</div> <div class="literal">&#34;2020-03-06T12:00:00Z&#34;</div><div class="operator"></div>
+	<div class="ident">Rule2CreatedAt</div>     <div class="operator">=</div> <div class="literal">&#34;1970-01-02T00:00:00Z&#34;</div><div class="operator"></div>
+	<div class="ident">Rule3CreatedAt</div>     <div class="operator">=</div> <div class="literal">&#34;1970-01-03T00:00:00Z&#34;</div><div class="operator"></div>
+	<div class="ident">Rule4CreatedAt</div>     <div class="operator">=</div> <div class="literal">&#34;1970-01-03T00:00:00Z&#34;</div><div class="operator"></div>
+	<div class="ident">Rule1Summary</div>       <div class="operator">=</div> <div class="literal">&#34;rule 1 summary&#34;</div><div class="operator"></div>
+	<div class="ident">Rule2Summary</div>       <div class="operator">=</div> <div class="literal">&#34;rule 2 summary&#34;</div><div class="operator"></div>
+	<div class="ident">Rule3Summary</div>       <div class="operator">=</div> <div class="literal">&#34;rule 3 summary&#34;</div><div class="operator"></div>
+	<div class="ident">Rule4Summary</div>       <div class="operator">=</div> <div class="literal">&#34;rule 4 summary&#34;</div><div class="operator"></div>
+	<div class="ident">Rule1Reason</div>        <div class="operator">=</div> <div class="literal">&#34;Clusteroperator{{?pydata.degraded_operators.length&gt;1}}s{{?}} degraded with NodeInstallerDegraded in reason:\n\n{{~ pydata.degraded_operators :operator }}\n**Cluster-operator:**  **{{=operator[\&#34;name\&#34;]}}**\n- *Reason:* {{=operator[\&#34;degraded\&#34;][\&#34;reason\&#34;]}}\n- *Message:* {{=operator[\&#34;degraded\&#34;][\&#34;message\&#34;]}}\n- *Last transition*: {{=operator[\&#34;degraded\&#34;][\&#34;last_trans_time\&#34;]}}\n\n{{~}}\n&#34;</div><div class="operator"></div>
+	<div class="ident">Rule2Reason</div>        <div class="operator">=</div> <div class="literal">&#34;rule 2 reason&#34;</div><div class="operator"></div>
+	<div class="ident">Rule3Reason</div>        <div class="operator">=</div> <div class="literal">&#34;rule 3 reason&#34;</div><div class="operator"></div>
+	<div class="ident">Rule4Reason</div>        <div class="operator">=</div> <div class="literal">&#34;rule 4 reason&#34;</div><div class="operator"></div>
+	<div class="ident">Rule1Resolution</div>    <div class="operator">=</div> <div class="literal">&#34;You may be hitting a [known bug](https://bugzilla.redhat.com/show_bug.cgi?id=1723966) and Red Hat recommends that you complete the following steps:\n\n{{~ pydata.degraded_operators :operator }}\n{{? operator[\&#34;name\&#34;] == \&#34;kube-apiserver\&#34;}}\n- For the **kube-apiserver** clusteroperator do:\n~~~\noc patch kubeapiserver/cluster --type merge -p \&#34;{\\\&#34;spec\\\&#34;:{\\\&#34;forceRedeploymentReason\\\&#34;:\\\&#34;Forcing new revision with random number $RANDOM to make message unique\\\&#34;}}\&#34;\n~~~\n{{?}}\n{{? operator[\&#34;name\&#34;] == \&#34;kube-controller-manager\&#34;}}\n- For the **kube-controller-manager** clusteroperator do:\n~~~\noc patch kubecontrollermanager/cluster --type merge -p \&#34;{\\\&#34;spec\\\&#34;:{\\\&#34;forceRedeploymentReason\\\&#34;:\\\&#34;Forcing new revision with random number $RANDOM to make message unique\\\&#34;}}\&#34;\n~~~\n{{?}}\n{{? operator[\&#34;name\&#34;] == \&#34;kube-scheduler\&#34;}}\n- For the **kube-scheduler** clusteroperator do:\n~~~\noc patch kubescheduler/cluster --type merge -p \&#34;{\\\&#34;spec\\\&#34;:{\\\&#34;forceRedeploymentReason\\\&#34;:\\\&#34;Forcing new revision with random number $RANDOM to make message unique\\\&#34;}}\&#34;\n~~~\n{{?}}\nThen wait several minutes and check if the operator is no longer degraded or progressing. If it is still degraded and the same error message is shown, retry (the race condition can be triggered again). If the error message is different or some retries do not make any improvement, open a support case to get further assistance.\n\nIf this solution solves your issue, but you are interested in tracking the definitive resolution of the bug, you can open a support case to do that as well.\n{{~}}&#34;</div><div class="operator"></div>
+	<div class="ident">Rule2Resolution</div>    <div class="operator">=</div> <div class="literal">&#34;rule 2 resolution&#34;</div><div class="operator"></div>
+	<div class="ident">Rule3Resolution</div>    <div class="operator">=</div> <div class="literal">&#34;rule 3 resolution&#34;</div><div class="operator"></div>
+	<div class="ident">Rule4Resolution</div>    <div class="operator">=</div> <div class="literal">&#34;rule 4 resolution&#34;</div><div class="operator"></div>
 	<div class="ident">Rule1Disabled</div>      <div class="operator">=</div> <div class="ident">false</div><div class="operator"></div>
 	<div class="ident">Rule2Disabled</div>      <div class="operator">=</div> <div class="ident">false</div><div class="operator"></div>
 	<div class="ident">Rule3Disabled</div>      <div class="operator">=</div> <div class="ident">false</div><div class="operator"></div>
@@ -213,7 +212,7 @@ limitations under the License.</p>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule1Summary</div><div class="operator">,</div>
 		<div class="ident">Reason</div><div class="operator">:</div>     <div class="ident">Rule1Reason</div><div class="operator">,</div>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule1Resolution</div><div class="operator">,</div>
-		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">toJSON</div><div class="operator">(</div><div class="ident">Rule1ExtraData</div><div class="operator">)</div><div class="operator">,</div>
+		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule1ExtraData</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
 	<div class="ident">Rule2</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">Rule</div><div class="operator">{</div>
 		<div class="ident">Module</div><div class="operator">:</div>     <div class="ident">Rule2ID</div><div class="operator">,</div>
@@ -221,7 +220,7 @@ limitations under the License.</p>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule2Summary</div><div class="operator">,</div>
 		<div class="ident">Reason</div><div class="operator">:</div>     <div class="ident">Rule2Reason</div><div class="operator">,</div>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule2Resolution</div><div class="operator">,</div>
-		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">toJSON</div><div class="operator">(</div><div class="ident">Rule2ExtraData</div><div class="operator">)</div><div class="operator">,</div>
+		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule2ExtraData</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
 	<div class="ident">Rule3</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">Rule</div><div class="operator">{</div>
 		<div class="ident">Module</div><div class="operator">:</div>     <div class="ident">Rule3ID</div><div class="operator">,</div>
@@ -229,7 +228,7 @@ limitations under the License.</p>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule3Summary</div><div class="operator">,</div>
 		<div class="ident">Reason</div><div class="operator">:</div>     <div class="ident">Rule3Reason</div><div class="operator">,</div>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule3Resolution</div><div class="operator">,</div>
-		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">toJSON</div><div class="operator">(</div><div class="ident">Rule3ExtraData</div><div class="operator">)</div><div class="operator">,</div>
+		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule3ExtraData</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
 	<div class="ident">Rule4</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">Rule</div><div class="operator">{</div>
 		<div class="ident">Module</div><div class="operator">:</div>     <div class="ident">Rule4ID</div><div class="operator">,</div>
@@ -237,7 +236,7 @@ limitations under the License.</p>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule4Summary</div><div class="operator">,</div>
 		<div class="ident">Reason</div><div class="operator">:</div>     <div class="ident">Rule4Reason</div><div class="operator">,</div>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule4Resolution</div><div class="operator">,</div>
-		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">toJSON</div><div class="operator">(</div><div class="ident">Rule4ExtraData</div><div class="operator">)</div><div class="operator">,</div>
+		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule4ExtraData</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
 	<div class="ident">RuleOnReport1</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleOnReport</div><div class="operator">{</div>
 		<div class="ident">Module</div><div class="operator">:</div>          <div class="ident">Rule1</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">,</div>
@@ -249,38 +248,38 @@ limitations under the License.</p>
 		<div class="ident">TemplateData</div><div class="operator">:</div>    <div class="ident">Rule1ExtraData</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
 	<div class="ident">RuleOnReport2</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleOnReport</div><div class="operator">{</div>
-		<div class="ident">Module</div><div class="operator">:</div>       <div class="ident">Rule2</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">,</div>
-		<div class="ident">ErrorKey</div><div class="operator">:</div>     <div class="ident">RuleErrorKey2</div><div class="operator">.</div><div class="ident">ErrorKey</div><div class="operator">,</div>
-		<div class="ident">UserVote</div><div class="operator">:</div>     <div class="ident">types</div><div class="operator">.</div><div class="ident">UserVoteNone</div><div class="operator">,</div>
-		<div class="ident">Disabled</div><div class="operator">:</div>     <div class="ident">Rule2Disabled</div><div class="operator">,</div>
+		<div class="ident">Module</div><div class="operator">:</div>          <div class="ident">Rule2</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">,</div>
+		<div class="ident">ErrorKey</div><div class="operator">:</div>        <div class="ident">RuleErrorKey2</div><div class="operator">.</div><div class="ident">ErrorKey</div><div class="operator">,</div>
+		<div class="ident">UserVote</div><div class="operator">:</div>        <div class="ident">types</div><div class="operator">.</div><div class="ident">UserVoteNone</div><div class="operator">,</div>
+		<div class="ident">Disabled</div><div class="operator">:</div>        <div class="ident">Rule2Disabled</div><div class="operator">,</div>
 		<div class="ident">DisableFeedback</div><div class="operator">:</div> <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 		<div class="ident">DisabledAt</div><div class="operator">:</div>      <div class="literal">&#34;&#34;</div><div class="operator">,</div>
-		<div class="ident">TemplateData</div><div class="operator">:</div> <div class="ident">Rule2ExtraData</div><div class="operator">,</div>
+		<div class="ident">TemplateData</div><div class="operator">:</div>    <div class="ident">Rule2ExtraData</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
 	<div class="ident">RuleOnReport3</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleOnReport</div><div class="operator">{</div>
-		<div class="ident">Module</div><div class="operator">:</div>       <div class="ident">Rule3</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">,</div>
-		<div class="ident">ErrorKey</div><div class="operator">:</div>     <div class="ident">RuleErrorKey3</div><div class="operator">.</div><div class="ident">ErrorKey</div><div class="operator">,</div>
-		<div class="ident">UserVote</div><div class="operator">:</div>     <div class="ident">types</div><div class="operator">.</div><div class="ident">UserVoteNone</div><div class="operator">,</div>
-		<div class="ident">Disabled</div><div class="operator">:</div>     <div class="ident">Rule3Disabled</div><div class="operator">,</div>
+		<div class="ident">Module</div><div class="operator">:</div>          <div class="ident">Rule3</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">,</div>
+		<div class="ident">ErrorKey</div><div class="operator">:</div>        <div class="ident">RuleErrorKey3</div><div class="operator">.</div><div class="ident">ErrorKey</div><div class="operator">,</div>
+		<div class="ident">UserVote</div><div class="operator">:</div>        <div class="ident">types</div><div class="operator">.</div><div class="ident">UserVoteNone</div><div class="operator">,</div>
+		<div class="ident">Disabled</div><div class="operator">:</div>        <div class="ident">Rule3Disabled</div><div class="operator">,</div>
 		<div class="ident">DisableFeedback</div><div class="operator">:</div> <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 		<div class="ident">DisabledAt</div><div class="operator">:</div>      <div class="literal">&#34;&#34;</div><div class="operator">,</div>
-		<div class="ident">TemplateData</div><div class="operator">:</div> <div class="ident">Rule3ExtraData</div><div class="operator">,</div>
+		<div class="ident">TemplateData</div><div class="operator">:</div>    <div class="ident">Rule3ExtraData</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
-	<div class="ident">RuleContent1</div> <div class="operator">=</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
+	<div class="ident">RuleContent1</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule1</div><div class="operator">.</div><div class="ident">Summary</div><div class="operator">,</div>
 		<div class="ident">Reason</div><div class="operator">:</div>     <div class="ident">Rule1</div><div class="operator">.</div><div class="ident">Reason</div><div class="operator">,</div>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule1</div><div class="operator">.</div><div class="ident">Resolution</div><div class="operator">,</div>
 		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule1</div><div class="operator">.</div><div class="ident">MoreInfo</div><div class="operator">,</div>
-		<div class="ident">Plugin</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RulePluginInfo</div><div class="operator">{</div>
+		<div class="ident">Plugin</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RulePluginInfo</div><div class="operator">{</div>
 			<div class="ident">Name</div><div class="operator">:</div>         <div class="ident">Rule1</div><div class="operator">.</div><div class="ident">Name</div><div class="operator">,</div>
 			<div class="ident">NodeID</div><div class="operator">:</div>       <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 			<div class="ident">ProductCode</div><div class="operator">:</div>  <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 			<div class="ident">PythonModule</div><div class="operator">:</div> <div class="ident">string</div><div class="operator">(</div><div class="ident">Rule1</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">)</div><div class="operator">,</div>
 		<div class="operator">}</div><div class="operator">,</div>
-		<div class="ident">ErrorKeys</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">content</div><div class="operator">.</div><div class="ident">RuleErrorKeyContent</div><div class="operator">{</div>
+		<div class="ident">ErrorKeys</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">types</div><div class="operator">.</div><div class="ident">RuleErrorKeyContent</div><div class="operator">{</div>
 			<div class="literal">&#34;ek1&#34;</div><div class="operator">:</div> <div class="operator">{</div>
 				<div class="ident">Generic</div><div class="operator">:</div> <div class="ident">RuleErrorKey1</div><div class="operator">.</div><div class="ident">Generic</div><div class="operator">,</div>
-				<div class="ident">Metadata</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">ErrorKeyMetadata</div><div class="operator">{</div>
+				<div class="ident">Metadata</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ErrorKeyMetadata</div><div class="operator">{</div>
 					<div class="ident">Condition</div><div class="operator">:</div>   <div class="ident">RuleErrorKey1</div><div class="operator">.</div><div class="ident">Condition</div><div class="operator">,</div>
 					<div class="ident">Description</div><div class="operator">:</div> <div class="ident">RuleErrorKey1</div><div class="operator">.</div><div class="ident">Description</div><div class="operator">,</div>
 					<div class="ident">Impact</div><div class="operator">:</div>      <div class="ident">ImpactIntToStr</div><div class="operator">[</div><div class="ident">RuleErrorKey1</div><div class="operator">.</div><div class="ident">Impact</div><div class="operator">]</div><div class="operator">,</div>
@@ -292,21 +291,21 @@ limitations under the License.</p>
 			<div class="operator">}</div><div class="operator">,</div>
 		<div class="operator">}</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
-	<div class="ident">RuleContent2</div> <div class="operator">=</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
+	<div class="ident">RuleContent2</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule2</div><div class="operator">.</div><div class="ident">Summary</div><div class="operator">,</div>
 		<div class="ident">Reason</div><div class="operator">:</div>     <div class="ident">Rule2</div><div class="operator">.</div><div class="ident">Reason</div><div class="operator">,</div>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule2</div><div class="operator">.</div><div class="ident">Resolution</div><div class="operator">,</div>
 		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule2</div><div class="operator">.</div><div class="ident">MoreInfo</div><div class="operator">,</div>
-		<div class="ident">Plugin</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RulePluginInfo</div><div class="operator">{</div>
+		<div class="ident">Plugin</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RulePluginInfo</div><div class="operator">{</div>
 			<div class="ident">Name</div><div class="operator">:</div>         <div class="ident">Rule2</div><div class="operator">.</div><div class="ident">Name</div><div class="operator">,</div>
 			<div class="ident">NodeID</div><div class="operator">:</div>       <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 			<div class="ident">ProductCode</div><div class="operator">:</div>  <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 			<div class="ident">PythonModule</div><div class="operator">:</div> <div class="ident">string</div><div class="operator">(</div><div class="ident">Rule2</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">)</div><div class="operator">,</div>
 		<div class="operator">}</div><div class="operator">,</div>
-		<div class="ident">ErrorKeys</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">content</div><div class="operator">.</div><div class="ident">RuleErrorKeyContent</div><div class="operator">{</div>
+		<div class="ident">ErrorKeys</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">types</div><div class="operator">.</div><div class="ident">RuleErrorKeyContent</div><div class="operator">{</div>
 			<div class="literal">&#34;ek2&#34;</div><div class="operator">:</div> <div class="operator">{</div>
 				<div class="ident">Generic</div><div class="operator">:</div> <div class="ident">RuleErrorKey2</div><div class="operator">.</div><div class="ident">Generic</div><div class="operator">,</div>
-				<div class="ident">Metadata</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">ErrorKeyMetadata</div><div class="operator">{</div>
+				<div class="ident">Metadata</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ErrorKeyMetadata</div><div class="operator">{</div>
 					<div class="ident">Condition</div><div class="operator">:</div>   <div class="ident">RuleErrorKey2</div><div class="operator">.</div><div class="ident">Condition</div><div class="operator">,</div>
 					<div class="ident">Description</div><div class="operator">:</div> <div class="ident">RuleErrorKey2</div><div class="operator">.</div><div class="ident">Description</div><div class="operator">,</div>
 					<div class="ident">Impact</div><div class="operator">:</div>      <div class="ident">ImpactIntToStr</div><div class="operator">[</div><div class="ident">RuleErrorKey2</div><div class="operator">.</div><div class="ident">Impact</div><div class="operator">]</div><div class="operator">,</div>
@@ -318,21 +317,21 @@ limitations under the License.</p>
 			<div class="operator">}</div><div class="operator">,</div>
 		<div class="operator">}</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
-	<div class="ident">RuleContent3</div> <div class="operator">=</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
+	<div class="ident">RuleContent3</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule3</div><div class="operator">.</div><div class="ident">Summary</div><div class="operator">,</div>
 		<div class="ident">Reason</div><div class="operator">:</div>     <div class="ident">Rule3</div><div class="operator">.</div><div class="ident">Reason</div><div class="operator">,</div>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule3</div><div class="operator">.</div><div class="ident">Resolution</div><div class="operator">,</div>
 		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule3</div><div class="operator">.</div><div class="ident">MoreInfo</div><div class="operator">,</div>
-		<div class="ident">Plugin</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RulePluginInfo</div><div class="operator">{</div>
+		<div class="ident">Plugin</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RulePluginInfo</div><div class="operator">{</div>
 			<div class="ident">Name</div><div class="operator">:</div>         <div class="ident">Rule3</div><div class="operator">.</div><div class="ident">Name</div><div class="operator">,</div>
 			<div class="ident">NodeID</div><div class="operator">:</div>       <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 			<div class="ident">ProductCode</div><div class="operator">:</div>  <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 			<div class="ident">PythonModule</div><div class="operator">:</div> <div class="ident">string</div><div class="operator">(</div><div class="ident">Rule3</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">)</div><div class="operator">,</div>
 		<div class="operator">}</div><div class="operator">,</div>
-		<div class="ident">ErrorKeys</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">content</div><div class="operator">.</div><div class="ident">RuleErrorKeyContent</div><div class="operator">{</div>
+		<div class="ident">ErrorKeys</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">types</div><div class="operator">.</div><div class="ident">RuleErrorKeyContent</div><div class="operator">{</div>
 			<div class="literal">&#34;ek3&#34;</div><div class="operator">:</div> <div class="operator">{</div>
 				<div class="ident">Generic</div><div class="operator">:</div> <div class="ident">RuleErrorKey3</div><div class="operator">.</div><div class="ident">Generic</div><div class="operator">,</div>
-				<div class="ident">Metadata</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">ErrorKeyMetadata</div><div class="operator">{</div>
+				<div class="ident">Metadata</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ErrorKeyMetadata</div><div class="operator">{</div>
 					<div class="ident">Condition</div><div class="operator">:</div>   <div class="ident">RuleErrorKey3</div><div class="operator">.</div><div class="ident">Condition</div><div class="operator">,</div>
 					<div class="ident">Description</div><div class="operator">:</div> <div class="ident">RuleErrorKey3</div><div class="operator">.</div><div class="ident">Description</div><div class="operator">,</div>
 					<div class="ident">Impact</div><div class="operator">:</div>      <div class="ident">ImpactIntToStr</div><div class="operator">[</div><div class="ident">RuleErrorKey3</div><div class="operator">.</div><div class="ident">Impact</div><div class="operator">]</div><div class="operator">,</div>
@@ -344,21 +343,21 @@ limitations under the License.</p>
 			<div class="operator">}</div><div class="operator">,</div>
 		<div class="operator">}</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
-	<div class="ident">RuleContent4</div> <div class="operator">=</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
+	<div class="ident">RuleContent4</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule4</div><div class="operator">.</div><div class="ident">Summary</div><div class="operator">,</div>
 		<div class="ident">Reason</div><div class="operator">:</div>     <div class="ident">Rule4</div><div class="operator">.</div><div class="ident">Reason</div><div class="operator">,</div>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule4</div><div class="operator">.</div><div class="ident">Resolution</div><div class="operator">,</div>
 		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule4</div><div class="operator">.</div><div class="ident">MoreInfo</div><div class="operator">,</div>
-		<div class="ident">Plugin</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RulePluginInfo</div><div class="operator">{</div>
+		<div class="ident">Plugin</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RulePluginInfo</div><div class="operator">{</div>
 			<div class="ident">Name</div><div class="operator">:</div>         <div class="ident">Rule4</div><div class="operator">.</div><div class="ident">Name</div><div class="operator">,</div>
 			<div class="ident">NodeID</div><div class="operator">:</div>       <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 			<div class="ident">ProductCode</div><div class="operator">:</div>  <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 			<div class="ident">PythonModule</div><div class="operator">:</div> <div class="ident">string</div><div class="operator">(</div><div class="ident">Rule4</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">)</div><div class="operator">,</div>
 		<div class="operator">}</div><div class="operator">,</div>
-		<div class="ident">ErrorKeys</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">content</div><div class="operator">.</div><div class="ident">RuleErrorKeyContent</div><div class="operator">{</div>
+		<div class="ident">ErrorKeys</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">types</div><div class="operator">.</div><div class="ident">RuleErrorKeyContent</div><div class="operator">{</div>
 			<div class="ident">ErrorKey4</div><div class="operator">:</div> <div class="operator">{</div>
 				<div class="ident">Generic</div><div class="operator">:</div> <div class="ident">RuleErrorKey4</div><div class="operator">.</div><div class="ident">Generic</div><div class="operator">,</div>
-				<div class="ident">Metadata</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">ErrorKeyMetadata</div><div class="operator">{</div>
+				<div class="ident">Metadata</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ErrorKeyMetadata</div><div class="operator">{</div>
 					<div class="ident">Condition</div><div class="operator">:</div>   <div class="ident">RuleErrorKey4</div><div class="operator">.</div><div class="ident">Condition</div><div class="operator">,</div>
 					<div class="ident">Description</div><div class="operator">:</div> <div class="ident">RuleErrorKey4</div><div class="operator">.</div><div class="ident">Description</div><div class="operator">,</div>
 					<div class="ident">Impact</div><div class="operator">:</div>      <div class="ident">ImpactIntToStr</div><div class="operator">[</div><div class="ident">RuleErrorKey4</div><div class="operator">.</div><div class="ident">Impact</div><div class="operator">]</div><div class="operator">,</div>
@@ -380,7 +379,7 @@ limitations under the License.</p>
 		<div class="ident">PublishDate</div><div class="operator">:</div> <div class="ident">LastCheckedAt</div><div class="operator">,</div>
 		<div class="ident">Active</div><div class="operator">:</div>      <div class="ident">false</div><div class="operator">,</div>
 		<div class="ident">Generic</div><div class="operator">:</div>     <div class="literal">&#34;generic1&#34;</div><div class="operator">,</div>
-		<div class="ident">Tags</div><div class="operator">:</div>        <div class="operator">[</div><div class="operator">]</div><div class="ident">string</div><div class="operator">{</div><div class="literal">&#34;openshift&#34;</div><div class="operator">,</div> <div class="literal">&#34;service_availability&#34;</div><div class="operator">}</div><div class="operator">,</div>
+		<div class="ident">Tags</div><div class="operator">:</div>        <div class="operator">[</div><div class="operator">]</div><div class="ident">string</div><div class="operator">{</div><div class="literal">&#34;openshift&#34;</div><div class="operator">,</div> <div class="literal">&#34;service_availability&#34;</div><div class="operator">,</div> <div class="literal">&#34;osd_customer&#34;</div><div class="operator">}</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
 	<div class="ident">RuleErrorKey2</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleErrorKey</div><div class="operator">{</div>
 		<div class="ident">ErrorKey</div><div class="operator">:</div>    <div class="literal">&#34;ek2&#34;</div><div class="operator">,</div>
@@ -464,7 +463,7 @@ limitations under the License.</p>
 		<div class="ident">Generic</div><div class="operator">:</div>     <div class="ident">RuleErrorKey3</div><div class="operator">.</div><div class="ident">Generic</div><div class="operator">,</div>
 		<div class="ident">Tags</div><div class="operator">:</div>        <div class="operator">[</div><div class="operator">]</div><div class="ident">string</div><div class="operator">{</div><div class="operator">}</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
-	<div class="ident">Rule1ExtraData</div>   <div class="operator">=</div> <div class="ident">stringToJSONRawMessage</div><div class="operator">(</div><div class="literal">`{
+	<div class="ident">Rule1ExtraData</div> <div class="operator">=</div> <div class="ident">stringToJSONRawMessage</div><div class="operator">(</div><div class="literal">`{
 		&#34;degraded_operators&#34;: [
 			{
 				&#34;available&#34;: {
@@ -551,11 +550,11 @@ limitations under the License.</p>
 		&#34;LastChecked&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">LastCheckedAt</div><div class="operator">.</div><div class="ident">UTC</div><div class="operator">(</div><div class="operator">)</div><div class="operator">.</div><div class="ident">Format</div><div class="operator">(</div><div class="ident">time</div><div class="operator">.</div><div class="ident">RFC3339</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`&#34;
 	}`</div><div class="operator"></div>
 	<div class="ident">LastCheckedAt</div>              <div class="operator">=</div> <div class="ident">time</div><div class="operator">.</div><div class="ident">Unix</div><div class="operator">(</div><div class="literal">25</div><div class="operator">,</div> <div class="literal">0</div><div class="operator">)</div><div class="operator">.</div><div class="ident">UTC</div><div class="operator">(</div><div class="operator">)</div><div class="operator"></div>
-	<div class="ident">RuleContentDirectory3Rules</div> <div class="operator">=</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">RuleContentDirectory</div><div class="operator">{</div>
-		<div class="ident">Config</div><div class="operator">:</div> <div class="ident">content</div><div class="operator">.</div><div class="ident">GlobalRuleConfig</div><div class="operator">{</div>
+	<div class="ident">RuleContentDirectory3Rules</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleContentDirectory</div><div class="operator">{</div>
+		<div class="ident">Config</div><div class="operator">:</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">GlobalRuleConfig</div><div class="operator">{</div>
 			<div class="ident">Impact</div><div class="operator">:</div> <div class="ident">ImpactStrToInt</div><div class="operator">,</div>
 		<div class="operator">}</div><div class="operator">,</div>
-		<div class="ident">Rules</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">content</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
+		<div class="ident">Rules</div><div class="operator">:</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">types</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
 			<div class="literal">&#34;rc1&#34;</div><div class="operator">:</div> <div class="ident">RuleContent1</div><div class="operator">,</div>
 			<div class="literal">&#34;rc2&#34;</div><div class="operator">:</div> <div class="ident">RuleContent2</div><div class="operator">,</div>
 			<div class="literal">&#34;rc3&#34;</div><div class="operator">:</div> <div class="ident">RuleContent3</div><div class="operator">,</div>
@@ -903,6 +902,20 @@ limitations under the License.</p>
 		  &#34;status&#34;: &#34;ok&#34;
 		}
 	`</div><div class="operator"></div>
+	<div class="ident">Report3SingleRuleExpectedResponse</div> <div class="operator">=</div> <div class="literal">`
+		{
+			&#34;report&#34;: `</div> <div class="operator">&#43;</div> <div class="ident">toJSON</div><div class="operator">(</div><div class="ident">RuleOnReport1</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`,
+			&#34;status&#34;: &#34;ok&#34;
+		}
+	`</div><div class="operator"></div>
+
+	<div class="ident">Report3SingleRule2ExpectedResponse</div> <div class="operator">=</div> <div class="literal">`
+		{
+			&#34;report&#34;: `</div> <div class="operator">&#43;</div> <div class="ident">toJSON</div><div class="operator">(</div><div class="ident">RuleOnReport2</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`,
+			&#34;status&#34;: &#34;ok&#34;
+		}
+	`</div><div class="operator"></div>
+
 	<div class="ident">ImpactStrToInt</div> <div class="operator">=</div> <div class="keyword">map</div><div class="operator">[</div><div class="ident">string</div><div class="operator">]</div><div class="ident">int</div><div class="operator">{</div>
 		<div class="literal">&#34;Zero&#34;</div><div class="operator">:</div>  <div class="literal">0</div><div class="operator">,</div>
 		<div class="literal">&#34;One&#34;</div><div class="operator">:</div>   <div class="literal">1</div><div class="operator">,</div>
