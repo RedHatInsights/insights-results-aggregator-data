@@ -87,6 +87,7 @@ var (
 		Resolution: Rule1Resolution,
 		MoreInfo:   Rule1ExtraData,
 	}
+	// Rule2 contains metainformation about rule with simple reason
 	Rule2 = types.Rule{
 		Module:     Rule2ID,
 		Name:       Rule2Name,
