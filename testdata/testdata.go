@@ -699,6 +699,7 @@ var (
 }
 	`)
 
+	// Report3Rules represents a synthesized and modified cluster report
 	// TODO: it's not a correct structure of a cluster report, it can't contain user_vote and disabled fields
 	Report3Rules = types.ClusterReport(`
 {
