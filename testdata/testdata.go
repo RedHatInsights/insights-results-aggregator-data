@@ -87,7 +87,7 @@ var (
 		Summary:    Rule1Summary,
 		Reason:     Rule1Reason,
 		Resolution: Rule1Resolution,
-		MoreInfo:   Rule1ExtraData,
+		MoreInfo:   Rule1MoreInfo,
 	}
 	// Rule2 contains metainformation about rule with simple reason
 	Rule2 = types.Rule{
@@ -96,7 +96,7 @@ var (
 		Summary:    Rule2Summary,
 		Reason:     Rule2Reason,
 		Resolution: Rule2Resolution,
-		MoreInfo:   Rule2ExtraData,
+		MoreInfo:   Rule2MoreInfo,
 	}
 	Rule3 = types.Rule{
 		Module:     Rule3ID,
@@ -104,7 +104,7 @@ var (
 		Summary:    Rule3Summary,
 		Reason:     Rule3Reason,
 		Resolution: Rule3Resolution,
-		MoreInfo:   Rule3ExtraData,
+		MoreInfo:   Rule3MoreInfo,
 	}
 	Rule4 = types.Rule{
 		Module:     Rule4ID,
@@ -112,7 +112,7 @@ var (
 		Summary:    Rule4Summary,
 		Reason:     Rule4Reason,
 		Resolution: Rule4Resolution,
-		MoreInfo:   Rule4ExtraData,
+		MoreInfo:   Rule4MoreInfo,
 	}
 	RuleOnReport1 = types.RuleOnReport{
 		Module:          Rule1.Module,
@@ -339,6 +339,10 @@ var (
 		Generic:     RuleErrorKey3.Generic,
 		Tags:        []string{},
 	}
+	Rule1MoreInfo  = "More info for rule 1"
+	Rule2MoreInfo  = "More info for rule 2"
+	Rule3MoreInfo  = "More info for rule 3"
+	Rule4MoreInfo  = "More info for rule 4"
 	Rule1ExtraData = stringToJSONRawMessage(`{
 		"degraded_operators": [
 			{
