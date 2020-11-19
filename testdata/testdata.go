@@ -74,6 +74,7 @@ const (
 	Rule1Disabled      = false
 	Rule2Disabled      = false
 	Rule3Disabled      = false
+	Rule4Disabled      = false
 	KafkaOffset        = types.KafkaOffset(1)
 	TestRequestID      = types.RequestID("example12345678/requestID")
 	ClusterReportEmpty = types.ClusterReport("{}")
@@ -140,6 +141,15 @@ var (
 		DisableFeedback: "",
 		DisabledAt:      "",
 		TemplateData:    Rule3ExtraData,
+	}
+	RuleOnReport4 = types.RuleOnReport{
+		Module:          Rule4.Module,
+		ErrorKey:        RuleErrorKey4.ErrorKey,
+		UserVote:        types.UserVoteNone,
+		Disabled:        Rule4Disabled,
+		DisableFeedback: "",
+		DisabledAt:      "",
+		TemplateData:    Rule4ExtraData,
 	}
 	RuleContent1 = types.RuleContent{
 		Summary:    Rule1.Summary,
@@ -740,6 +750,21 @@ var (
 }
 `)
 
+	// Report1RuleExpectedResponse  is an example of response sent by insights-results-aggregator
+	Report1RuleExpectedResponse = `
+		{
+			"report": {
+				"meta": {
+					"count": 1,
+					"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+				},
+				"reports": [
+					` + toJSON(RuleOnReport4) + `
+				]
+			},
+			"status": "ok"
+		}
+	`
 	// Report3RulesExpectedResponse  is an example of response sent by insights-results-aggregator
 	Report3RulesExpectedResponse = `
 		{
