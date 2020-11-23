@@ -90,7 +90,7 @@ var (
 		Resolution: Rule1Resolution,
 		MoreInfo:   Rule1MoreInfo,
 	}
-	// Rule2 contains metainformation about rule with simple reason
+	// Rule2 contains metainformation about rule with simple reason (regular data)
 	Rule2 = types.Rule{
 		Module:     Rule2ID,
 		Name:       Rule2Name,
@@ -99,6 +99,7 @@ var (
 		Resolution: Rule2Resolution,
 		MoreInfo:   Rule2MoreInfo,
 	}
+	// Rule3 cointains metainformation about rile with simple reason (regular data)
 	Rule3 = types.Rule{
 		Module:     Rule3ID,
 		Name:       Rule3Name,

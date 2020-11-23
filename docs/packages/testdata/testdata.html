@@ -208,6 +208,7 @@ limitations under the License.</p>
 	<div class="ident">Rule1Disabled</div>      <div class="operator">=</div> <div class="ident">false</div><div class="operator"></div>
 	<div class="ident">Rule2Disabled</div>      <div class="operator">=</div> <div class="ident">false</div><div class="operator"></div>
 	<div class="ident">Rule3Disabled</div>      <div class="operator">=</div> <div class="ident">false</div><div class="operator"></div>
+	<div class="ident">Rule4Disabled</div>      <div class="operator">=</div> <div class="ident">false</div><div class="operator"></div>
 	<div class="ident">KafkaOffset</div>        <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">KafkaOffset</div><div class="operator">(</div><div class="literal">1</div><div class="operator">)</div><div class="operator"></div>
 	<div class="ident">TestRequestID</div>      <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RequestID</div><div class="operator">(</div><div class="literal">&#34;example12345678/requestID&#34;</div><div class="operator">)</div><div class="operator"></div>
 	<div class="ident">ClusterReportEmpty</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">ClusterReport</div><div class="operator">(</div><div class="literal">&#34;{}&#34;</div><div class="operator">)</div><div class="operator"></div>
@@ -232,7 +233,7 @@ limitations under the License.</p>
       </tr>
       
       <tr class="section">
-	<td class="doc"><p>Rule2 contains metainformation about rule with simple reason</p>
+	<td class="doc"><p>Rule2 contains metainformation about rule with simple reason (regular data)</p>
 </td>
 	<td class="code"><pre><code>	<div class="ident">Rule2</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">Rule</div><div class="operator">{</div>
 		<div class="ident">Module</div><div class="operator">:</div>     <div class="ident">Rule2ID</div><div class="operator">,</div>
@@ -242,7 +243,13 @@ limitations under the License.</p>
 		<div class="ident">Resolution</div><div class="operator">:</div> <div class="ident">Rule2Resolution</div><div class="operator">,</div>
 		<div class="ident">MoreInfo</div><div class="operator">:</div>   <div class="ident">Rule2MoreInfo</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
-	<div class="ident">Rule3</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">Rule</div><div class="operator">{</div>
+</code></pre></td>
+      </tr>
+      
+      <tr class="section">
+	<td class="doc"><p>Rule3 cointains metainformation about rile with simple reason (regular data)</p>
+</td>
+	<td class="code"><pre><code>	<div class="ident">Rule3</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">Rule</div><div class="operator">{</div>
 		<div class="ident">Module</div><div class="operator">:</div>     <div class="ident">Rule3ID</div><div class="operator">,</div>
 		<div class="ident">Name</div><div class="operator">:</div>       <div class="ident">Rule3Name</div><div class="operator">,</div>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule3Summary</div><div class="operator">,</div>
@@ -284,6 +291,15 @@ limitations under the License.</p>
 		<div class="ident">DisableFeedback</div><div class="operator">:</div> <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 		<div class="ident">DisabledAt</div><div class="operator">:</div>      <div class="literal">&#34;&#34;</div><div class="operator">,</div>
 		<div class="ident">TemplateData</div><div class="operator">:</div>    <div class="ident">Rule3ExtraData</div><div class="operator">,</div>
+	<div class="operator">}</div><div class="operator"></div>
+	<div class="ident">RuleOnReport4</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleOnReport</div><div class="operator">{</div>
+		<div class="ident">Module</div><div class="operator">:</div>          <div class="ident">Rule4</div><div class="operator">.</div><div class="ident">Module</div><div class="operator">,</div>
+		<div class="ident">ErrorKey</div><div class="operator">:</div>        <div class="ident">RuleErrorKey4</div><div class="operator">.</div><div class="ident">ErrorKey</div><div class="operator">,</div>
+		<div class="ident">UserVote</div><div class="operator">:</div>        <div class="ident">types</div><div class="operator">.</div><div class="ident">UserVoteNone</div><div class="operator">,</div>
+		<div class="ident">Disabled</div><div class="operator">:</div>        <div class="ident">Rule4Disabled</div><div class="operator">,</div>
+		<div class="ident">DisableFeedback</div><div class="operator">:</div> <div class="literal">&#34;&#34;</div><div class="operator">,</div>
+		<div class="ident">DisabledAt</div><div class="operator">:</div>      <div class="literal">&#34;&#34;</div><div class="operator">,</div>
+		<div class="ident">TemplateData</div><div class="operator">:</div>    <div class="ident">Rule4ExtraData</div><div class="operator">,</div>
 	<div class="operator">}</div><div class="operator"></div>
 	<div class="ident">RuleContent1</div> <div class="operator">=</div> <div class="ident">types</div><div class="operator">.</div><div class="ident">RuleContent</div><div class="operator">{</div>
 		<div class="ident">Summary</div><div class="operator">:</div>    <div class="ident">Rule1</div><div class="operator">.</div><div class="ident">Summary</div><div class="operator">,</div>
@@ -889,6 +905,26 @@ TODO: it's not a correct structure of a cluster report, it can't contain user_vo
 }
 `</div><div class="operator">)</div><div class="operator"></div>
 
+</code></pre></td>
+      </tr>
+      
+      <tr class="section">
+	<td class="doc"><p>Report1RuleExpectedResponse  is an example of response sent by insights-results-aggregator</p>
+</td>
+	<td class="code"><pre><code>	<div class="ident">Report1RuleExpectedResponse</div> <div class="operator">=</div> <div class="literal">`
+		{
+			&#34;report&#34;: {
+				&#34;meta&#34;: {
+					&#34;count&#34;: 1,
+					&#34;last_checked_at&#34;: &#34;`</div> <div class="operator">&#43;</div> <div class="ident">LastCheckedAt</div><div class="operator">.</div><div class="ident">UTC</div><div class="operator">(</div><div class="operator">)</div><div class="operator">.</div><div class="ident">Format</div><div class="operator">(</div><div class="ident">time</div><div class="operator">.</div><div class="ident">RFC3339</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`&#34;
+				},
+				&#34;reports&#34;: [
+					`</div> <div class="operator">&#43;</div> <div class="ident">toJSON</div><div class="operator">(</div><div class="ident">RuleOnReport4</div><div class="operator">)</div> <div class="operator">&#43;</div> <div class="literal">`
+				]
+			},
+			&#34;status&#34;: &#34;ok&#34;
+		}
+	`</div><div class="operator"></div>
 </code></pre></td>
       </tr>
       
