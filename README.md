@@ -1,5 +1,6 @@
 # insights-results-aggregator-data
 
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/RedHatInsights/insights-results-aggregator-data)
 [![License](https://img.shields.io/badge/license-Apache-blue)](https://github.com/RedHatInsights/insights-results-aggregator-data/blob/master/LICENSE)
 
 Data shared by insights-results-* microservices.
