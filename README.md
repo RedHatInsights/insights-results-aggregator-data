@@ -1,5 +1,7 @@
 # insights-results-aggregator-data
 
+[![License](https://img.shields.io/badge/license-Apache-blue)](https://github.com/RedHatInsights/insights-results-aggregator-data/blob/master/LICENSE)
+
 Data shared by insights-results-* microservices.
 
 ## Messages
