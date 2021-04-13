@@ -43,38 +43,47 @@ const (
 	Rule2ID            = types.RuleID("test.rule2")
 	Rule3ID            = types.RuleID("test.rule3")
 	Rule4ID            = types.RuleID("test.rule4")
+	Rule5ID            = types.RuleID("test.rule5")
 	Rule1Name          = "rule 1 name"
 	Rule2Name          = "rule 2 name"
 	Rule3Name          = "rule 3 name"
 	Rule4Name          = "rule 4 name"
+	Rule5Name          = "rule 5 name"
 	ErrorKey1          = "ek1"
 	ErrorKey2          = "ek2"
 	ErrorKey3          = "ek3"
 	ErrorKey4          = "ek4"
+	ErrorKey5          = "ek5"
 	Rule1Description   = "Clusteroperator is degraded when the installer pods are removed too soon during upgrade"
 	Rule2Description   = "rule 2 description"
 	Rule3Description   = "rule 3 description"
 	Rule4Description   = "rule 4 description"
+	Rule5Description   = "rule 5 description"
 	Rule1CreatedAt     = "2020-03-06T12:00:00Z"
 	Rule2CreatedAt     = "1970-01-02T00:00:00Z"
 	Rule3CreatedAt     = "1970-01-03T00:00:00Z"
 	Rule4CreatedAt     = "1970-01-03T00:00:00Z"
+	Rule5CreatedAt     = "1970-01-05T00:00:00Z"
 	Rule1Summary       = "rule 1 summary"
 	Rule2Summary       = "rule 2 summary"
 	Rule3Summary       = "rule 3 summary"
 	Rule4Summary       = "rule 4 summary"
+	Rule5Summary       = "rule 5 summary"
 	Rule1Reason        = "Clusteroperator{{?pydata.degraded_operators.length>1}}s{{?}} degraded with NodeInstallerDegraded in reason:\n\n{{~ pydata.degraded_operators :operator }}\n**Cluster-operator:**  **{{=operator[\"name\"]}}**\n- *Reason:* {{=operator[\"degraded\"][\"reason\"]}}\n- *Message:* {{=operator[\"degraded\"][\"message\"]}}\n- *Last transition*: {{=operator[\"degraded\"][\"last_trans_time\"]}}\n\n{{~}}\n"
 	Rule2Reason        = "rule 2 reason"
 	Rule3Reason        = "rule 3 reason"
 	Rule4Reason        = "rule 4 reason"
+	Rule5Reason        = "rule 5 reason"
 	Rule1Resolution    = "You may be hitting a [known bug](https://bugzilla.redhat.com/show_bug.cgi?id=1723966) and Red Hat recommends that you complete the following steps:\n\n{{~ pydata.degraded_operators :operator }}\n{{? operator[\"name\"] == \"kube-apiserver\"}}\n- For the **kube-apiserver** clusteroperator do:\n~~~\noc patch kubeapiserver/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-controller-manager\"}}\n- For the **kube-controller-manager** clusteroperator do:\n~~~\noc patch kubecontrollermanager/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-scheduler\"}}\n- For the **kube-scheduler** clusteroperator do:\n~~~\noc patch kubescheduler/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\nThen wait several minutes and check if the operator is no longer degraded or progressing. If it is still degraded and the same error message is shown, retry (the race condition can be triggered again). If the error message is different or some retries do not make any improvement, open a support case to get further assistance.\n\nIf this solution solves your issue, but you are interested in tracking the definitive resolution of the bug, you can open a support case to do that as well.\n{{~}}"
 	Rule2Resolution    = "rule 2 resolution"
 	Rule3Resolution    = "rule 3 resolution"
 	Rule4Resolution    = "rule 4 resolution"
+	Rule5Resolution    = "rule 5 resolution"
 	Rule1Disabled      = false
 	Rule2Disabled      = false
 	Rule3Disabled      = false
 	Rule4Disabled      = false
+	Rule5Disabled      = true
 	KafkaOffset        = types.KafkaOffset(1)
 	TestRequestID      = types.RequestID("example12345678/requestID")
 	ClusterReportEmpty = types.ClusterReport("{}")
@@ -99,7 +108,7 @@ var (
 		Resolution: Rule2Resolution,
 		MoreInfo:   Rule2MoreInfo,
 	}
-	// Rule3 cointains metainformation about rile with simple reason (regular data)
+	// Rule3 cointains metainformation about rule with simple reason (regular data)
 	Rule3 = types.Rule{
 		Module:     Rule3ID,
 		Name:       Rule3Name,
@@ -108,6 +117,7 @@ var (
 		Resolution: Rule3Resolution,
 		MoreInfo:   Rule3MoreInfo,
 	}
+	// Rule4 contains metainformation about rule with simple reason (regular data)
 	Rule4 = types.Rule{
 		Module:     Rule4ID,
 		Name:       Rule4Name,
@@ -115,6 +125,15 @@ var (
 		Reason:     Rule4Reason,
 		Resolution: Rule4Resolution,
 		MoreInfo:   Rule4MoreInfo,
+	}
+	// Rule5 contains metainformation about rule with simple reason (regular data)
+	Rule5 = types.Rule{
+		Module:     Rule5ID,
+		Name:       Rule5Name,
+		Summary:    Rule5Summary,
+		Reason:     Rule5Reason,
+		Resolution: Rule5Resolution,
+		MoreInfo:   Rule5MoreInfo,
 	}
 	RuleOnReport1 = types.RuleOnReport{
 		Module:          Rule1.Module,
@@ -151,6 +170,15 @@ var (
 		DisableFeedback: "",
 		DisabledAt:      "",
 		TemplateData:    Rule4ExtraData,
+	}
+	RuleOnReport5 = types.RuleOnReport{
+		Module:          Rule5.Module,
+		ErrorKey:        RuleErrorKey5.ErrorKey,
+		UserVote:        types.UserVoteNone,
+		Disabled:        Rule5Disabled,
+		DisableFeedback: "",
+		DisabledAt:      "",
+		TemplateData:    Rule5ExtraData,
 	}
 	RuleContent1 = types.RuleContent{
 		Summary:    Rule1.Summary,
@@ -256,6 +284,32 @@ var (
 			},
 		},
 	}
+	RuleContent5 = types.RuleContent{
+		Summary:    Rule5.Summary,
+		Reason:     Rule5.Reason,
+		Resolution: Rule5.Resolution,
+		MoreInfo:   Rule5.MoreInfo,
+		Plugin: types.RulePluginInfo{
+			Name:         Rule5.Name,
+			NodeID:       "",
+			ProductCode:  "",
+			PythonModule: string(Rule5.Module),
+		},
+		ErrorKeys: map[string]types.RuleErrorKeyContent{
+			ErrorKey4: {
+				Generic: RuleErrorKey5.Generic,
+				Metadata: types.ErrorKeyMetadata{
+					Condition:   RuleErrorKey5.Condition,
+					Description: RuleErrorKey5.Description,
+					Impact:      ImpactIntToStr[RuleErrorKey5.Impact],
+					Likelihood:  RuleErrorKey5.Likelihood,
+					PublishDate: "2019-10-29 15:00:00",
+					Status:      statusToStr(RuleErrorKey5.Active),
+					Tags:        RuleErrorKey5.Tags,
+				},
+			},
+		},
+	}
 	RuleErrorKey1 = types.RuleErrorKey{
 		ErrorKey:    "ek1",
 		RuleModule:  Rule1ID,
@@ -293,6 +347,18 @@ var (
 	RuleErrorKey4 = types.RuleErrorKey{
 		ErrorKey:    ErrorKey4,
 		RuleModule:  Rule4ID,
+		Condition:   "condition1",
+		Description: "description1",
+		Impact:      1,
+		Likelihood:  2,
+		PublishDate: LastCheckedAt,
+		Active:      false,
+		Generic:     "generic1",
+		Tags:        []string{"openshift", "service_availability"},
+	}
+	RuleErrorKey5 = types.RuleErrorKey{
+		ErrorKey:    ErrorKey5,
+		RuleModule:  Rule5ID,
 		Condition:   "condition1",
 		Description: "description1",
 		Impact:      1,
@@ -354,6 +420,7 @@ var (
 	Rule2MoreInfo  = "More info for rule 2"
 	Rule3MoreInfo  = "More info for rule 3"
 	Rule4MoreInfo  = "More info for rule 4"
+	Rule5MoreInfo  = "More info for rule 5"
 	Rule1ExtraData = stringToJSONRawMessage(`{
 		"degraded_operators": [
 			{
@@ -427,6 +494,10 @@ var (
         "type": "rule",
         "error_key": "NODE_KUBELET_VERSION"
     }`)
+	Rule5ExtraData = stringToJSONRawMessage(`{
+	    "type": "rule",
+	    "error_key": "BUGZILLA_BUG_1766907"
+	}`)
 	ConsumerReport = `{
 		"fingerprints": [],
 		"info": [],
@@ -449,6 +520,18 @@ var (
 			"rc1": RuleContent1,
 			"rc2": RuleContent2,
 			"rc3": RuleContent3,
+		},
+	}
+	RuleContentDirectory5Rules = types.RuleContentDirectory{
+		Config: types.GlobalRuleConfig{
+			Impact: ImpactStrToInt,
+		},
+		Rules: map[string]types.RuleContent{
+			"rc1": RuleContent1,
+			"rc2": RuleContent2,
+			"rc3": RuleContent3,
+			"rc4": RuleContent4,
+			"rc5": RuleContent5,
 		},
 	}
 
@@ -809,6 +892,23 @@ var (
 	Report3SingleRule2ExpectedResponse = `
 		{
 			"report": ` + toJSON(RuleOnReport2) + `,
+			"status": "ok"
+		}
+	`
+
+	Report3Rules1DisabledExpectedResponse = `
+		{
+			"report": {
+				"meta": {
+					"count": 3,
+					"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+				},
+				"reports": [
+					` + toJSON(RuleOnReport1) + `,
+					` + toJSON(RuleOnReport2) + `,
+					` + toJSON(RuleOnReport5) + `
+				]
+			},
 			"status": "ok"
 		}
 	`
