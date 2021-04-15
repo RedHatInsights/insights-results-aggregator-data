@@ -296,14 +296,14 @@ var (
 			PythonModule: string(Rule5.Module),
 		},
 		ErrorKeys: map[string]types.RuleErrorKeyContent{
-			ErrorKey4: {
+			ErrorKey5: {
 				Generic: RuleErrorKey5.Generic,
 				Metadata: types.ErrorKeyMetadata{
 					Condition:   RuleErrorKey5.Condition,
 					Description: RuleErrorKey5.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey5.Impact],
 					Likelihood:  RuleErrorKey5.Likelihood,
-					PublishDate: "2019-10-29 15:00:00",
+					PublishDate: timeToStr(RuleErrorKey5.PublishDate),
 					Status:      statusToStr(RuleErrorKey5.Active),
 					Tags:        RuleErrorKey5.Tags,
 				},
