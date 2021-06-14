@@ -196,7 +196,6 @@ var (
 				Generic:   RuleErrorKey1.Generic,
 				TotalRisk: (RuleErrorKey1.Impact + RuleErrorKey1.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
-					Condition:   RuleErrorKey1.Condition,
 					Description: RuleErrorKey1.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey1.Impact],
 					Likelihood:  RuleErrorKey1.Likelihood,
@@ -223,7 +222,6 @@ var (
 				Generic:   RuleErrorKey2.Generic,
 				TotalRisk: (RuleErrorKey2.Impact + RuleErrorKey2.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
-					Condition:   RuleErrorKey2.Condition,
 					Description: RuleErrorKey2.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey2.Impact],
 					Likelihood:  RuleErrorKey2.Likelihood,
@@ -250,7 +248,6 @@ var (
 				Generic:   RuleErrorKey3.Generic,
 				TotalRisk: (RuleErrorKey3.Impact + RuleErrorKey3.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
-					Condition:   RuleErrorKey3.Condition,
 					Description: RuleErrorKey3.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey3.Impact],
 					Likelihood:  RuleErrorKey3.Likelihood,
@@ -277,7 +274,6 @@ var (
 				Generic:   RuleErrorKey4.Generic,
 				TotalRisk: (RuleErrorKey4.Impact + RuleErrorKey4.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
-					Condition:   RuleErrorKey4.Condition,
 					Description: RuleErrorKey4.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey4.Impact],
 					Likelihood:  RuleErrorKey4.Likelihood,
@@ -304,7 +300,6 @@ var (
 				Generic:   RuleErrorKey5.Generic,
 				TotalRisk: (RuleErrorKey5.Impact + RuleErrorKey5.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
-					Condition:   RuleErrorKey5.Condition,
 					Description: RuleErrorKey5.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey5.Impact],
 					Likelihood:  RuleErrorKey5.Likelihood,
