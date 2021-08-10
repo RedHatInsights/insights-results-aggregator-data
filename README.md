@@ -3,20 +3,25 @@
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/RedHatInsights/insights-results-aggregator-data)
 [![License](https://img.shields.io/badge/license-Apache-blue)](https://github.com/RedHatInsights/insights-results-aggregator-data/blob/master/LICENSE)
 
-Data shared by insights-results-* microservices.
+Data shared by insights-results-\* microservices.
 
-## Messages
+## Messages for Insights Results Writer service
 
-Data (messages) to be consumed by Insights Results Aggregator
+Data (messages) to be consumed by *Insights Results Writer* service (it's
+source code is shared with *Insights Results Aggregator* service). These data
+are stored in `messages` subdirectory and are splitted into various
+sub-directories.
 
 ### Mock data for aggregator
 
-Data to be consumed by aggregator through Kafka broker is prepared in `messages/` subdirectory.
-These data can be send to Insights Results Aggregator by using the script called `produce.sh` or `produce_50k_messages.sh`.
+Data to be consumed by aggregator through Kafka broker is stored in `messages/` subdirectory.
+These data can be send to *Insights Results Writer* service by using the script called `produce.sh` or `produce_50k_messages.sh`.
 The mentioned tools are available at https://github.com/RedHatInsights/insights-results-aggregator-utils/blob/master/input/produce.sh and
 https://github.com/RedHatInsights/insights-results-aggregator-utils/blob/master/input/produce_50k_messages.sh
 
-Several types of data are prepared there:
+Several types of messages are prepared there. There are splitted into groups.
+
+#### Normal messages with expected format and content
 
 * `messages/results_no_tutorial/r_[0-9]*.json` - real data analyzed from test clusters
 * `messages/results_tutorial/r_tutorial_[0-9]*.json` - real data analyzed from test clusters with added tutorial rule result
@@ -31,6 +36,11 @@ Several types of data are prepared there:
 * `messages/normal/05_rules_hits.json` - report with exactly 5 rule hits
 * `messages/normal/10_rules_hits.json` - report with exactly 10 rule hits
 * `messages/normal/15_rules_hits.json` - report with exactly 15 rule hits
+
+#### Messages with unexpected format and/or content
+
+To be used for testing etc.
+
 * `messages/broken/added_items*.json` - reports with added items (that should not be in there)
 * `messages/broken/mutated_items*.json` - reports with mutated items
 * `messages/broken/without_*.json` - reports without one or more attributes
