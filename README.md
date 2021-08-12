@@ -3,52 +3,107 @@
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/RedHatInsights/insights-results-aggregator-data)
 [![License](https://img.shields.io/badge/license-Apache-blue)](https://github.com/RedHatInsights/insights-results-aggregator-data/blob/master/LICENSE)
 
-Data shared by insights-results-\* microservices.
+Data shared by insights-results-\* microservices that can be used for mocking and testing.
 
-## Messages for Insights Results Writer service
+Three types of data are stored in this repository:
+
+1. Messages to be consumed by Insights Results Writer
+1. Cluster reports as produced by the Smart Proxy
+1. Test data in format of Go structures
+
+## Messages to be consumed by Insights Results Writer service
 
 Data (messages) to be consumed by *Insights Results Writer* service (it's
-source code is shared with *Insights Results Aggregator* service). These data
-are stored in `messages` subdirectory and are splitted into various
-sub-directories.
+source code is shared with *Insights Results Aggregator* service) through
+Kafka broker. These data are stored in `messages` subdirectory and are
+splitted into various sub-directories.
 
-### Mock data for aggregator
-
-Data to be consumed by aggregator through Kafka broker is stored in `messages/` subdirectory.
-These data can be send to *Insights Results Writer* service by using the script called `produce.sh` or `produce_50k_messages.sh`.
 The mentioned tools are available at https://github.com/RedHatInsights/insights-results-aggregator-utils/blob/master/input/produce.sh and
 https://github.com/RedHatInsights/insights-results-aggregator-utils/blob/master/input/produce_50k_messages.sh
 
 Several types of messages are prepared there. There are splitted into groups.
+Each group is stored in its own subdirectory:
 
-#### Normal messages with expected format and content
+* `normal`
+* `normal_no_version`
+* `normal_wrong_version`
+* `normal_for_notification_tests`
+* `broken`
+* `invalid`
+* `invalid_no_account_number`
+* `invalid_no_cluster_name`
+* `invalid_no_last_checked`
+* `invalid_no_organization_id`
+* `invalid_no_report`
+* `invalid_no_version`
+* `invalid_string_version`
+* `invalid_wrong_cluster_name`
+* `invalid_wrong_last_checked`
+* `invalid_wrong_org_id`
+* `invalid_wrong_report`
+* `results_no_tutorial`
+* `results_tutorial`
 
-* `messages/results_no_tutorial/r_[0-9]*.json` - real data analyzed from test clusters
-* `messages/results_tutorial/r_tutorial_[0-9]*.json` - real data analyzed from test clusters with added tutorial rule result
-* `messages/normal/result*.json` - artificially created data
-* `messages/normal/big_resuts.json` - file with most reports created by joining several real data (no cluster is in the state when all rules fail)
-* `messages/normal/big_results_tutorial.json` - the same, but with tutorial rule result
-* `messages/normal/big_results_no_skips.json` - the same, but no skipped rules are stored
-* `messages/normal/big_results_no_skips_tutorial.json` - the same, but with tutorial rule result
-* `messages/normal/no_hits.json` - data with no rule hits (ie. the cluster is healthy)
-* `messages/normal/no_hits_no_skips.json` - data with no rule hits and no skips (ie. there's no health check performed)
-* `messages/normal/tutorial_only.json` - report with only tutorial rule hit
-* `messages/normal/05_rules_hits.json` - report with exactly 5 rule hits
-* `messages/normal/10_rules_hits.json` - report with exactly 10 rule hits
-* `messages/normal/15_rules_hits.json` - report with exactly 15 rule hits
+
+
+### Normal messages with expected format and content
+
+*Insights Results Writer* service should be able to consume and process these
+messages, because their format and content are correct.
+
+These messages are stored in `messages/normal` subdirectory.
+
+Please look into [this document](messages/normal/README.md) for detailed description.
+
+
+
+### Normal messages with expected format but with missing version info
+
+*Insights Results Writer* service should be able to consume these messages as
+they have correct format. But the `version` attribute is missing, so these
+messages should be rejected after consumption.
+
+These messages are stored in `messages/normal_no_version` subdirectory.
+
+Please look into [this document](messages/normal_no_version/README.md) for detailed description.
+
+
+
+### Normal messages with expected format but with wrong version info
+
+*Insights Results Writer* service should be able to consume these messages as
+they have correct format. But the `version` attribute is set to unexpected (too
+high) value, so these messages should be rejected after consumption.
+
+These messages are stored in `messages/normal_wrong_version` subdirectory.
+
+Please look into [this document](messages/normal_wrong_version/README.md) for detailed description.
+
+
+
+### Normal messages with content to be used by CCX Notification Writer
+
+These are messages with expected format and content. The content (basically set
+of rules) is prepared to be used by *CCX Notification Writer* and later by *CCX
+Notification Service*.
+
+These messages are stored in `messages/normal_for_notification_tests/` subdirectory.
+
+Please look into [this document](messages/normal_for_notification_tests/README.md) for detailed description.
+
+
 
 #### Messages with unexpected format and/or content
 
-To be used for testing etc.
+These messages should be rejected by *Insights Results Writer* and also by *CCS
+Notification Writer* services as their format is unexpected or wrong at all.
+OTOH such data are very valuable for testing etc.
 
-* `messages/broken/added_items*.json` - reports with added items (that should not be in there)
-* `messages/broken/mutated_items*.json` - reports with mutated items
-* `messages/broken/without_*.json` - reports without one or more attributes
-* `messages/invalid/added_*.json` - invalid JSONs (wrong structure) with added random lines
-* `messages/invalid/deleted_*.json` - invalid JSONs (wrong structure) with removed lines
-* `messages/invalid/shuffled_*.json` - invalid JSONs (wrong structure) with shuffled lines
-* `messages/invalid/mutated_*.json` - invalid JSONs (wrong structure) with mutated lines
-* `messages/invalid/all_*.json` - invalid JSONs (wrong structure) with lines changed in many ways
+These messages are stored in `messages/broken/` subdirectory.
+
+Please look into [this document](messages/broken/README.md) for detailed description.
+
+
 
 ## Test data
 
