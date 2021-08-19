@@ -160,6 +160,17 @@ Please look into [this document](messages/invalid_no_version/README.md) for deta
 
 
 
+#### Messages with invalid format - missing report
+
+These messages should be rejected by *Insights Results Writer* and also by *CCS
+Notification Writer* services as the whole report is missing (just other attributes are there).
+
+These messages are stored in `messages/invalid_no_report/` subdirectory.
+
+Please look into [this document](messages/invalid_no_report/README.md) for detailed description.
+
+
+
 ## Test data
 
 `github.com/RedHatInsights/insights-results-aggregator-data/testdata` package contains files with repeated data 
