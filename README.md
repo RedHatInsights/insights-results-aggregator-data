@@ -7,9 +7,9 @@ Data shared by insights-results-\* microservices that can be used for mocking an
 
 Three types of data are stored in this repository:
 
-1. Messages to be consumed by Insights Results Writer
-1. Cluster reports as produced by the Smart Proxy
-1. Test data in format of Go structures
+1. Messages to be consumed by *Insights Results Writer* and *CCX Notification Writer* services
+1. Cluster reports as produced by the *Smart Proxy* via its REST API interface
+1. Test data in format of Go structures to be used in all form of tests (unit tests, integration tests...)
 
 ## Messages to be consumed by Insights Results Writer service
 
