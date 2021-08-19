@@ -149,6 +149,17 @@ Please look into [this document](messages/invalid_no_organization_id/README.md) 
 
 
 
+#### Messages with invalid format - missing version info
+
+These messages should be rejected by *Insights Results Writer* and also by *CCS
+Notification Writer* services as the `version` attribute is missing.
+
+These messages are stored in `messages/invalid_no_version/` subdirectory.
+
+Please look into [this document](messages/invalid_no_version/README.md) for detailed description.
+
+
+
 ## Test data
 
 `github.com/RedHatInsights/insights-results-aggregator-data/testdata` package contains files with repeated data 
