@@ -105,6 +105,17 @@ Please look into [this document](messages/broken/README.md) for detailed descrip
 
 
 
+#### Messages with invalid format - missing account number
+
+These messages should be rejected by *Insights Results Writer* and also by *CCS
+Notification Writer* services as the `account_number` attribute is missing.
+
+These messages are stored in `messages/invalid_no_account_number/` subdirectory.
+
+Please look into [this document](messages/invalid_no_account_number/README.md) for detailed description.
+
+
+
 ## Test data
 
 `github.com/RedHatInsights/insights-results-aggregator-data/testdata` package contains files with repeated data 
