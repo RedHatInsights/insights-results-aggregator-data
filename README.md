@@ -116,6 +116,17 @@ Please look into [this document](messages/invalid_no_account_number/README.md) f
 
 
 
+#### Messages with invalid format - missing cluster name
+
+These messages should be rejected by *Insights Results Writer* and also by *CCS
+Notification Writer* services as the `cluster_name` attribute is missing.
+
+These messages are stored in `messages/invalid_no_cluster_name/` subdirectory.
+
+Please look into [this document](messages/invalid_no_cluster_name/README.md) for detailed description.
+
+
+
 ## Test data
 
 `github.com/RedHatInsights/insights-results-aggregator-data/testdata` package contains files with repeated data 
