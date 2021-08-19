@@ -138,6 +138,17 @@ Please look into [this document](messages/invalid_no_last_checked/README.md) for
 
 
 
+#### Messages with invalid format - missing organization ID
+
+These messages should be rejected by *Insights Results Writer* and also by *CCS
+Notification Writer* services as the `org_id` attribute is missing.
+
+These messages are stored in `messages/invalid_no_organization_id/` subdirectory.
+
+Please look into [this document](messages/invalid_no_organization_id/README.md) for detailed description.
+
+
+
 ## Test data
 
 `github.com/RedHatInsights/insights-results-aggregator-data/testdata` package contains files with repeated data 
