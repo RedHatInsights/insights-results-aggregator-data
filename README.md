@@ -127,6 +127,17 @@ Please look into [this document](messages/invalid_no_cluster_name/README.md) for
 
 
 
+#### Messages with invalid format - missing last checked timestamp
+
+These messages should be rejected by *Insights Results Writer* and also by *CCS
+Notification Writer* services as the `last_checked` attribute is missing.
+
+These messages are stored in `messages/invalid_no_last_checked/` subdirectory.
+
+Please look into [this document](messages/invalid_no_last_checked/README.md) for detailed description.
+
+
+
 ## Test data
 
 `github.com/RedHatInsights/insights-results-aggregator-data/testdata` package contains files with repeated data 
