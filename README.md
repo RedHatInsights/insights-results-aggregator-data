@@ -95,13 +95,79 @@ Please look into [this document](messages/normal_for_notification_tests/README.m
 
 #### Messages with unexpected format and/or content
 
-These messages should be rejected by *Insights Results Writer* and also by *CCS
+These messages should be rejected by *Insights Results Writer* and also by *CCX
 Notification Writer* services as their format is unexpected or wrong at all.
 OTOH such data are very valuable for testing etc.
 
 These messages are stored in `messages/broken/` subdirectory.
 
 Please look into [this document](messages/broken/README.md) for detailed description.
+
+
+
+#### Messages with invalid format - missing account number
+
+These messages should be rejected by *Insights Results Writer* and also by *CCX
+Notification Writer* services as the `account_number` attribute is missing.
+
+These messages are stored in `messages/invalid_no_account_number/` subdirectory.
+
+Please look into [this document](messages/invalid_no_account_number/README.md) for detailed description.
+
+
+
+#### Messages with invalid format - missing cluster name
+
+These messages should be rejected by *Insights Results Writer* and also by *CCX
+Notification Writer* services as the `cluster_name` attribute is missing.
+
+These messages are stored in `messages/invalid_no_cluster_name/` subdirectory.
+
+Please look into [this document](messages/invalid_no_cluster_name/README.md) for detailed description.
+
+
+
+#### Messages with invalid format - missing last checked timestamp
+
+These messages should be rejected by *Insights Results Writer* and also by *CCX
+Notification Writer* services as the `last_checked` attribute is missing.
+
+These messages are stored in `messages/invalid_no_last_checked/` subdirectory.
+
+Please look into [this document](messages/invalid_no_last_checked/README.md) for detailed description.
+
+
+
+#### Messages with invalid format - missing organization ID
+
+These messages should be rejected by *Insights Results Writer* and also by *CCX
+Notification Writer* services as the `org_id` attribute is missing.
+
+These messages are stored in `messages/invalid_no_organization_id/` subdirectory.
+
+Please look into [this document](messages/invalid_no_organization_id/README.md) for detailed description.
+
+
+
+#### Messages with invalid format - missing version info
+
+These messages should be rejected by *Insights Results Writer* and also by *CCX
+Notification Writer* services as the `version` attribute is missing.
+
+These messages are stored in `messages/invalid_no_version/` subdirectory.
+
+Please look into [this document](messages/invalid_no_version/README.md) for detailed description.
+
+
+
+#### Messages with invalid format - missing report
+
+These messages should be rejected by *Insights Results Writer* and also by *CCX
+Notification Writer* services as the whole report is missing (just other attributes are there).
+
+These messages are stored in `messages/invalid_no_report/` subdirectory.
+
+Please look into [this document](messages/invalid_no_report/README.md) for detailed description.
 
 
 
