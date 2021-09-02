@@ -49,6 +49,11 @@ const (
 	Rule3Name          = "rule 3 name"
 	Rule4Name          = "rule 4 name"
 	Rule5Name          = "rule 5 name"
+	Rule1Generic       = "rule 1 generic"
+	Rule2Generic       = "rule 2 generic"
+	Rule3Generic       = "rule 3 generic"
+	Rule4Generic       = "rule 4 generic"
+	Rule5Generic       = "rule 5 generic"
 	ErrorKey1          = "ek1"
 	ErrorKey2          = "ek2"
 	ErrorKey3          = "ek3"
@@ -94,6 +99,7 @@ var (
 	Rule1 = types.Rule{
 		Module:     Rule1ID,
 		Name:       Rule1Name,
+		Generic:    Rule1Generic,
 		Summary:    Rule1Summary,
 		Reason:     Rule1Reason,
 		Resolution: Rule1Resolution,
@@ -103,6 +109,7 @@ var (
 	Rule2 = types.Rule{
 		Module:     Rule2ID,
 		Name:       Rule2Name,
+		Generic:    Rule2Generic,
 		Summary:    Rule2Summary,
 		Reason:     Rule2Reason,
 		Resolution: Rule2Resolution,
@@ -112,6 +119,7 @@ var (
 	Rule3 = types.Rule{
 		Module:     Rule3ID,
 		Name:       Rule3Name,
+		Generic:    Rule3Generic,
 		Summary:    Rule3Summary,
 		Reason:     Rule3Reason,
 		Resolution: Rule3Resolution,
@@ -121,6 +129,7 @@ var (
 	Rule4 = types.Rule{
 		Module:     Rule4ID,
 		Name:       Rule4Name,
+		Generic:    Rule4Generic,
 		Summary:    Rule4Summary,
 		Reason:     Rule4Reason,
 		Resolution: Rule4Resolution,
@@ -130,6 +139,7 @@ var (
 	Rule5 = types.Rule{
 		Module:     Rule5ID,
 		Name:       Rule5Name,
+		Generic:    Rule5Generic,
 		Summary:    Rule5Summary,
 		Reason:     Rule5Reason,
 		Resolution: Rule5Resolution,
@@ -182,6 +192,7 @@ var (
 	}
 	RuleContent1 = types.RuleContent{
 		Summary:    Rule1.Summary,
+		Generic:    Rule1.Generic,
 		Reason:     Rule1.Reason,
 		Resolution: Rule1.Resolution,
 		MoreInfo:   Rule1.MoreInfo,
@@ -193,8 +204,12 @@ var (
 		},
 		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			ErrorKey1: {
-				Generic:   RuleErrorKey1.Generic,
-				TotalRisk: (RuleErrorKey1.Impact + RuleErrorKey1.Likelihood) / 2,
+				Generic:    RuleErrorKey1.Generic,
+				Summary:    RuleErrorKey1.Summary,
+				Reason:     RuleErrorKey1.Reason,
+				Resolution: RuleErrorKey1.Resolution,
+				MoreInfo:   RuleErrorKey1.MoreInfo,
+				TotalRisk:  (RuleErrorKey1.Impact + RuleErrorKey1.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey1.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey1.Impact],
@@ -208,6 +223,7 @@ var (
 	}
 	RuleContent2 = types.RuleContent{
 		Summary:    Rule2.Summary,
+		Generic:    Rule2.Generic,
 		Reason:     Rule2.Reason,
 		Resolution: Rule2.Resolution,
 		MoreInfo:   Rule2.MoreInfo,
@@ -219,8 +235,12 @@ var (
 		},
 		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			ErrorKey2: {
-				Generic:   RuleErrorKey2.Generic,
-				TotalRisk: (RuleErrorKey2.Impact + RuleErrorKey2.Likelihood) / 2,
+				Generic:    RuleErrorKey2.Generic,
+				Summary:    RuleErrorKey2.Summary,
+				Reason:     RuleErrorKey2.Reason,
+				Resolution: RuleErrorKey2.Resolution,
+				MoreInfo:   RuleErrorKey2.MoreInfo,
+				TotalRisk:  (RuleErrorKey2.Impact + RuleErrorKey2.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey2.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey2.Impact],
@@ -234,6 +254,7 @@ var (
 	}
 	RuleContent3 = types.RuleContent{
 		Summary:    Rule3.Summary,
+		Generic:    Rule3.Generic,
 		Reason:     Rule3.Reason,
 		Resolution: Rule3.Resolution,
 		MoreInfo:   Rule3.MoreInfo,
@@ -245,8 +266,12 @@ var (
 		},
 		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			ErrorKey3: {
-				Generic:   RuleErrorKey3.Generic,
-				TotalRisk: (RuleErrorKey3.Impact + RuleErrorKey3.Likelihood) / 2,
+				Generic:    RuleErrorKey3.Generic,
+				Summary:    RuleErrorKey3.Summary,
+				Reason:     RuleErrorKey3.Reason,
+				Resolution: RuleErrorKey3.Resolution,
+				MoreInfo:   RuleErrorKey3.MoreInfo,
+				TotalRisk:  (RuleErrorKey3.Impact + RuleErrorKey3.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey3.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey3.Impact],
@@ -260,6 +285,7 @@ var (
 	}
 	RuleContent4 = types.RuleContent{
 		Summary:    Rule4.Summary,
+		Generic:    Rule4.Generic,
 		Reason:     Rule4.Reason,
 		Resolution: Rule4.Resolution,
 		MoreInfo:   Rule4.MoreInfo,
@@ -271,8 +297,12 @@ var (
 		},
 		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			ErrorKey4: {
-				Generic:   RuleErrorKey4.Generic,
-				TotalRisk: (RuleErrorKey4.Impact + RuleErrorKey4.Likelihood) / 2,
+				Generic:    RuleErrorKey4.Generic,
+				Summary:    RuleErrorKey4.Summary,
+				Reason:     RuleErrorKey4.Reason,
+				Resolution: RuleErrorKey4.Resolution,
+				MoreInfo:   RuleErrorKey4.MoreInfo,
+				TotalRisk:  (RuleErrorKey4.Impact + RuleErrorKey4.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey4.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey4.Impact],
@@ -286,6 +316,7 @@ var (
 	}
 	RuleContent5 = types.RuleContent{
 		Summary:    Rule5.Summary,
+		Generic:    Rule5.Generic,
 		Reason:     Rule5.Reason,
 		Resolution: Rule5.Resolution,
 		MoreInfo:   Rule5.MoreInfo,
@@ -297,8 +328,12 @@ var (
 		},
 		ErrorKeys: map[string]types.RuleErrorKeyContent{
 			ErrorKey5: {
-				Generic:   RuleErrorKey5.Generic,
-				TotalRisk: (RuleErrorKey5.Impact + RuleErrorKey5.Likelihood) / 2,
+				Generic:    RuleErrorKey5.Generic,
+				Summary:    RuleErrorKey5.Summary,
+				Reason:     RuleErrorKey5.Reason,
+				Resolution: RuleErrorKey5.Resolution,
+				MoreInfo:   RuleErrorKey5.MoreInfo,
+				TotalRisk:  (RuleErrorKey5.Impact + RuleErrorKey5.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey5.Description,
 					Impact:      ImpactIntToStr[RuleErrorKey5.Impact],
@@ -320,6 +355,10 @@ var (
 		PublishDate: LastCheckedAt,
 		Active:      false,
 		Generic:     "generic1",
+		Summary:     "summary1",
+		Reason:      "reason1",
+		Resolution:  "resolution1",
+		MoreInfo:    "moreinfo1",
 		Tags:        []string{"openshift", "service_availability", "osd_customer"},
 	}
 	RuleErrorKey2 = types.RuleErrorKey{
@@ -332,6 +371,10 @@ var (
 		PublishDate: LastCheckedAt,
 		Active:      true,
 		Generic:     "generic2",
+		Summary:     "summary2",
+		Reason:      "reason2",
+		Resolution:  "resolution2",
+		MoreInfo:    "moreinfo2",
 	}
 	RuleErrorKey3 = types.RuleErrorKey{
 		ErrorKey:    ErrorKey3,
@@ -343,6 +386,10 @@ var (
 		PublishDate: LastCheckedAt,
 		Active:      true,
 		Generic:     "generic3",
+		Summary:     "summary3",
+		Reason:      "reason3",
+		Resolution:  "resolution3",
+		MoreInfo:    "moreinfo3",
 	}
 	RuleErrorKey4 = types.RuleErrorKey{
 		ErrorKey:    ErrorKey4,
@@ -353,7 +400,11 @@ var (
 		Likelihood:  2,
 		PublishDate: LastCheckedAt,
 		Active:      false,
-		Generic:     "generic1",
+		Generic:     "generic4",
+		Summary:     "summary4",
+		Reason:      "reason4",
+		Resolution:  "resolution4",
+		MoreInfo:    "moreinfo4",
 		Tags:        []string{"openshift", "service_availability"},
 	}
 	RuleErrorKey5 = types.RuleErrorKey{
@@ -365,16 +416,20 @@ var (
 		Likelihood:  2,
 		PublishDate: LastCheckedAt,
 		Active:      false,
-		Generic:     "generic1",
+		Generic:     "generic5",
+		Summary:     "summary5",
+		Reason:      "reason5",
+		Resolution:  "resolution5",
+		MoreInfo:    "moreinfo5",
 		Tags:        []string{"openshift", "service_availability"},
 	}
 	RuleWithContent1 = types.RuleWithContent{
 		Module:      Rule1.Module,
 		Name:        Rule1.Name,
-		Summary:     Rule1.Summary,
-		Reason:      Rule1.Reason,
-		Resolution:  Rule1.Resolution,
-		MoreInfo:    Rule1.MoreInfo,
+		Summary:     RuleErrorKey1.Summary,
+		Reason:      RuleErrorKey1.Reason,
+		Resolution:  RuleErrorKey1.Resolution,
+		MoreInfo:    RuleErrorKey1.MoreInfo,
 		ErrorKey:    RuleErrorKey1.ErrorKey,
 		Condition:   RuleErrorKey1.Condition,
 		Description: RuleErrorKey1.Description,
@@ -387,10 +442,10 @@ var (
 	RuleWithContent2 = types.RuleWithContent{
 		Module:      Rule2.Module,
 		Name:        Rule2.Name,
-		Summary:     Rule2.Summary,
-		Reason:      Rule2.Reason,
-		Resolution:  Rule2.Resolution,
-		MoreInfo:    Rule2.MoreInfo,
+		Summary:     RuleErrorKey2.Summary,
+		Reason:      RuleErrorKey2.Reason,
+		Resolution:  RuleErrorKey2.Resolution,
+		MoreInfo:    RuleErrorKey2.MoreInfo,
 		ErrorKey:    RuleErrorKey2.ErrorKey,
 		Condition:   RuleErrorKey2.Condition,
 		Description: RuleErrorKey2.Description,
@@ -403,10 +458,10 @@ var (
 	RuleWithContent3 = types.RuleWithContent{
 		Module:      Rule3.Module,
 		Name:        Rule3.Name,
-		Summary:     Rule3.Summary,
-		Reason:      Rule3.Reason,
-		Resolution:  Rule3.Resolution,
-		MoreInfo:    Rule3.MoreInfo,
+		Summary:     RuleErrorKey3.Summary,
+		Reason:      RuleErrorKey3.Reason,
+		Resolution:  RuleErrorKey3.Resolution,
+		MoreInfo:    RuleErrorKey3.MoreInfo,
 		ErrorKey:    RuleErrorKey3.ErrorKey,
 		Condition:   RuleErrorKey3.Condition,
 		Description: RuleErrorKey3.Description,
