@@ -212,7 +212,7 @@ var (
 				TotalRisk:  (RuleErrorKey1.Impact + RuleErrorKey1.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey1.Description,
-					Impact:      ImpactIntToStr[RuleErrorKey1.Impact],
+					Impact:      RuleErrorKey1.Impact,
 					Likelihood:  RuleErrorKey1.Likelihood,
 					PublishDate: timeToStr(RuleErrorKey1.PublishDate),
 					Status:      statusToStr(RuleErrorKey1.Active),
@@ -243,7 +243,7 @@ var (
 				TotalRisk:  (RuleErrorKey2.Impact + RuleErrorKey2.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey2.Description,
-					Impact:      ImpactIntToStr[RuleErrorKey2.Impact],
+					Impact:      RuleErrorKey2.Impact,
 					Likelihood:  RuleErrorKey2.Likelihood,
 					PublishDate: timeToStr(RuleErrorKey2.PublishDate),
 					Status:      statusToStr(RuleErrorKey2.Active),
@@ -274,7 +274,7 @@ var (
 				TotalRisk:  (RuleErrorKey3.Impact + RuleErrorKey3.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey3.Description,
-					Impact:      ImpactIntToStr[RuleErrorKey3.Impact],
+					Impact:      RuleErrorKey3.Impact,
 					Likelihood:  RuleErrorKey3.Likelihood,
 					PublishDate: timeToStr(RuleErrorKey3.PublishDate),
 					Status:      statusToStr(RuleErrorKey3.Active),
@@ -305,7 +305,7 @@ var (
 				TotalRisk:  (RuleErrorKey4.Impact + RuleErrorKey4.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey4.Description,
-					Impact:      ImpactIntToStr[RuleErrorKey4.Impact],
+					Impact:      RuleErrorKey4.Impact,
 					Likelihood:  RuleErrorKey4.Likelihood,
 					PublishDate: "2019-10-29 15:00:00",
 					Status:      statusToStr(RuleErrorKey4.Active),
@@ -336,7 +336,7 @@ var (
 				TotalRisk:  (RuleErrorKey5.Impact + RuleErrorKey5.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey5.Description,
-					Impact:      ImpactIntToStr[RuleErrorKey5.Impact],
+					Impact:      RuleErrorKey5.Impact,
 					Likelihood:  RuleErrorKey5.Likelihood,
 					PublishDate: timeToStr(RuleErrorKey5.PublishDate),
 					Status:      statusToStr(RuleErrorKey5.Active),
@@ -390,6 +390,7 @@ var (
 		Reason:      "reason3",
 		Resolution:  "resolution3",
 		MoreInfo:    "moreinfo3",
+		Tags:        []string{},
 	}
 	RuleErrorKey4 = types.RuleErrorKey{
 		ErrorKey:    ErrorKey4,
