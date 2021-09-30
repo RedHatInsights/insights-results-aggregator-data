@@ -243,7 +243,7 @@ var (
 				TotalRisk:  (RuleErrorKey2.Impact + RuleErrorKey2.Likelihood) / 2,
 				Metadata: types.ErrorKeyMetadata{
 					Description: RuleErrorKey2.Description,
-					Impact:      ImpactIntToStr[RuleErrorKey2.Impact],
+					Impact:      RuleErrorKey2.Impact,
 					Likelihood:  RuleErrorKey2.Likelihood,
 					PublishDate: timeToStr(RuleErrorKey2.PublishDate),
 					Status:      statusToStr(RuleErrorKey2.Active),
