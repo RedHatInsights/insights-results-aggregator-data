@@ -22,6 +22,7 @@ import (
 
 	"github.com/google/uuid"
 
+	"github.com/RedHatInsights/insights-operator-utils/generators"
 	"github.com/RedHatInsights/insights-operator-utils/tests/helpers"
 	"github.com/RedHatInsights/insights-operator-utils/types"
 )
@@ -95,6 +96,12 @@ const (
 )
 
 var (
+	// RuleCompositeIDs are in a `rule.module|ERROR_KEY` format
+	Rule1CompositeID = generators.GenerateRuleID(types.RuleFQDN(Rule1ID), types.ErrorKey(ErrorKey1))
+	Rule2CompositeID = generators.GenerateRuleID(types.RuleFQDN(Rule2ID), types.ErrorKey(ErrorKey2))
+	Rule3CompositeID = generators.GenerateRuleID(types.RuleFQDN(Rule3ID), types.ErrorKey(ErrorKey3))
+	Rule4CompositeID = generators.GenerateRuleID(types.RuleFQDN(Rule4ID), types.ErrorKey(ErrorKey4))
+	Rule5CompositeID = generators.GenerateRuleID(types.RuleFQDN(Rule5ID), types.ErrorKey(ErrorKey5))
 	// Rule1 contains metainformation about rule with key NODE_INSTALLER_DEGRADED
 	Rule1 = types.Rule{
 		Module:     Rule1ID,
