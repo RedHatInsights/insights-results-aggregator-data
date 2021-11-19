@@ -24,7 +24,8 @@ import (
 
 	"github.com/RedHatInsights/insights-operator-utils/generators"
 	"github.com/RedHatInsights/insights-operator-utils/tests/helpers"
-	"github.com/RedHatInsights/insights-operator-utils/types"
+	utypes "github.com/RedHatInsights/insights-operator-utils/types"
+	types "github.com/RedHatInsights/insights-results-types"
 )
 
 const (
@@ -97,11 +98,11 @@ const (
 
 var (
 	// RuleCompositeIDs are in a `rule.module|ERROR_KEY` format
-	Rule1CompositeID, _ = generators.GenerateCompositeRuleID(types.RuleFQDN(Rule1ID), types.ErrorKey(ErrorKey1))
-	Rule2CompositeID, _ = generators.GenerateCompositeRuleID(types.RuleFQDN(Rule2ID), types.ErrorKey(ErrorKey2))
-	Rule3CompositeID, _ = generators.GenerateCompositeRuleID(types.RuleFQDN(Rule3ID), types.ErrorKey(ErrorKey3))
-	Rule4CompositeID, _ = generators.GenerateCompositeRuleID(types.RuleFQDN(Rule4ID), types.ErrorKey(ErrorKey4))
-	Rule5CompositeID, _ = generators.GenerateCompositeRuleID(types.RuleFQDN(Rule5ID), types.ErrorKey(ErrorKey5))
+	Rule1CompositeID, _ = generators.GenerateCompositeRuleID(utypes.RuleFQDN(Rule1ID), utypes.ErrorKey(ErrorKey1))
+	Rule2CompositeID, _ = generators.GenerateCompositeRuleID(utypes.RuleFQDN(Rule2ID), utypes.ErrorKey(ErrorKey2))
+	Rule3CompositeID, _ = generators.GenerateCompositeRuleID(utypes.RuleFQDN(Rule3ID), utypes.ErrorKey(ErrorKey3))
+	Rule4CompositeID, _ = generators.GenerateCompositeRuleID(utypes.RuleFQDN(Rule4ID), utypes.ErrorKey(ErrorKey4))
+	Rule5CompositeID, _ = generators.GenerateCompositeRuleID(utypes.RuleFQDN(Rule5ID), utypes.ErrorKey(ErrorKey5))
 	// Rule1 contains metainformation about rule with key NODE_INSTALLER_DEGRADED
 	Rule1 = types.Rule{
 		Module:     Rule1ID,
