@@ -368,6 +368,39 @@ var (
 			},
 		},
 	}
+
+	RuleContent1V2 = types.RuleContentV2{
+		Summary:    Rule1.Summary,
+		Generic:    Rule1.Generic,
+		Reason:     Rule1.Reason,
+		Resolution: Rule1.Resolution,
+		MoreInfo:   Rule1.MoreInfo,
+		Plugin: types.RulePluginInfo{
+			Name:         Rule1.Name,
+			NodeID:       "",
+			ProductCode:  "",
+			PythonModule: string(Rule1.Module),
+		},
+		ErrorKeys: map[string]types.RuleErrorKeyContentV2{
+			ErrorKey1: {
+				Generic:    RuleErrorKey1.Generic,
+				Summary:    RuleErrorKey1.Summary,
+				Reason:     RuleErrorKey1.Reason,
+				Resolution: RuleErrorKey1.Resolution,
+				MoreInfo:   RuleErrorKey1.MoreInfo,
+				TotalRisk:  (RuleErrorKey1.Impact + RuleErrorKey1.Likelihood) / 2,
+				Metadata: types.ErrorKeyMetadataV2{
+					Description: RuleErrorKey1.Description,
+					Impact:      RuleErrorKey1.Impact,
+					Likelihood:  RuleErrorKey1.Likelihood,
+					PublishDate: timeToStr(RuleErrorKey1.PublishDate),
+					Status:      statusToStr(RuleErrorKey1.Active),
+					Tags:        RuleErrorKey1.Tags,
+				},
+			},
+		},
+	}
+
 	RuleErrorKey1 = types.RuleErrorKey{
 		ErrorKey:    ErrorKey1,
 		RuleModule:  Rule1ID,
