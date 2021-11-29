@@ -12,8 +12,14 @@ Please delete options that are not relevant.
 - New feature (non-breaking change which adds functionality)
 - Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - This change requires a documentation update
+- Refactor (refactoring code, removing useless files)
+- Bump-up dependent library (no changes in the code)
 - Documentation update
 
 ## Testing steps
 
 Please describe how the change was tested locally. If, for some reason, the testing was not done or not done fully, please describe what are the testing steps.
+
+## Checklist
+* [ ] updated documentation wherever necessary
+* [ ] updated schemas and validators in [insights-data-schemas](https://github.com/RedHatInsights/insights-data-schemas) in case of input/output change
