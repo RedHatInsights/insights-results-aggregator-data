@@ -28,9 +28,9 @@ const (
 	// 	"org_id": "1",
 	// 	"jti": "05443b99-d824-480b-a4be-37977405f093",
 	// 	"iat": 1594126340,
-	// 	"exp": 1594141847
+	// 	"exp": 2556144000
 	// }
-	GoodJWTAuthBearer = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X251bWJlciI6IjUyMTM0NzYiLCJvcmdfaWQiOiIxIiwianRpIjoiMDU0NDNiOTktZDgyNC00ODBiLWE0YmUtMzc5Nzc0MDVmMDkzIiwiaWF0IjoxNTk0MTI2MzQwLCJleHAiOjE1OTQxNDE4NDd9.pp32mPoypnRjOYE95SrBar0fdLS9t_hndOtP5qUvB-c"
+	GoodJWTAuthBearer = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X251bWJlciI6IjUyMTM0NzYiLCJvcmdfaWQiOiIxIiwianRpIjoiMDU0NDNiOTktZDgyNC00ODBiLWE0YmUtMzc5Nzc0MDVmMDkzIiwiaWF0IjoxNTk0MTI2MzQwLCJleHAiOjI1NTYxNDQwMDB9.nkc5taqc5pjMQKDDhmDH4gkhPckezxMSf3ZLmVl4eBA"
 
 	// UnparsableJWTAuthBearer cannot be parsed
 	UnparsableJWTAuthBearer = "Bearer this_is^not.a-token"
