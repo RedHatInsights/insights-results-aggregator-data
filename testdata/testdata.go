@@ -762,7 +762,8 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `",
+			"stored_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
@@ -792,7 +793,8 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `",
+			"stored_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
@@ -852,7 +854,8 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `",
+			"stored_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
