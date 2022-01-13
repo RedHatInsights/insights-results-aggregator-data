@@ -1049,6 +1049,44 @@ var (
 		"Eight",
 		"Nine",
 	}
+	ResponseNoRulesDisabledSystemWide = `{
+		"meta": {
+			"count": 0
+		},
+		"data": []
+	}`
+
+	ResponseRule1DisabledSystemWide = struct {
+		Status string                             `json:"status"`
+		RuleDisable []types.SystemWideRuleDisable `json:"disabledRules"`
+	}{
+		Status: "ok",
+		RuleDisable: []types.SystemWideRuleDisable{
+			{
+				OrgID:         OrgID,
+				UserID:        UserID,
+				RuleID:        Rule1ID,
+				ErrorKey:      ErrorKey1,
+				Justification: "Rule 1 disabled for testing purposes",
+			},
+		},
+	}
+
+	ResponseRule2DisabledSystemWide = struct {
+		Status string                             `json:"status"`
+		RuleDisable []types.SystemWideRuleDisable `json:"disabledRules"`
+	}{
+		Status: "ok",
+		RuleDisable: []types.SystemWideRuleDisable{
+			{
+				OrgID:         OrgID,
+				UserID:        UserID,
+				RuleID:        Rule2ID,
+				ErrorKey:      ErrorKey2,
+				Justification: "Rule 2 disabled for testing purposes",
+			},
+		},
+	}
 )
 
 func timeToStr(t time.Time) string {
