@@ -762,7 +762,8 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `",
+			"gathered_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
@@ -792,7 +793,8 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `",
+			"gathered_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
@@ -852,7 +854,8 @@ var (
 	"report": {
 		"meta": {
 			"count": 2,
-			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+			"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `",
+			"gathered_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 		},
 		"reports": [
 			{
@@ -967,7 +970,8 @@ var (
 			"report": {
 				"meta": {
 					"count": 3,
-					"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
+					"last_checked_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `",
+					"gathered_at": "` + LastCheckedAt.UTC().Format(time.RFC3339) + `"
 				},
 				"reports": [
 					` + toJSON(RuleOnReport1) + `,
@@ -1057,7 +1061,7 @@ var (
 	}`
 
 	ResponseRule1DisabledSystemWide = struct {
-		Status string                             `json:"status"`
+		Status      string                        `json:"status"`
 		RuleDisable []types.SystemWideRuleDisable `json:"disabledRules"`
 	}{
 		Status: "ok",
@@ -1073,7 +1077,7 @@ var (
 	}
 
 	ResponseRule2DisabledSystemWide = struct {
-		Status string                             `json:"status"`
+		Status      string                        `json:"status"`
 		RuleDisable []types.SystemWideRuleDisable `json:"disabledRules"`
 	}{
 		Status: "ok",
