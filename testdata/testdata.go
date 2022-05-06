@@ -36,7 +36,10 @@ const (
 	Org2ID = types.OrgID(2)
 
 	// ClusterName represents ID of cluster that belongs to known organization
-	ClusterName        = types.ClusterName("84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc")
+	ClusterName = types.ClusterName("84f7eedc-0dd8-49cd-9d4d-f6646df3a5bc")
+	// ClusterVersion represents the version of the cluster that belongs to known organization
+	ClusterVersion = types.Version("1.0")
+
 	UserID             = types.UserID("1")
 	User2ID            = types.UserID("2")
 	BadClusterName     = types.ClusterName("aaaa")
