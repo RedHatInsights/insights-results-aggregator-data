@@ -1169,25 +1169,3 @@ func GetRandomOrgID() types.OrgID {
 func GetRandomClusterID() types.ClusterName {
 	return types.ClusterName(uuid.New().String())
 }
-
-// TODO: move to utils
-func toJSON(obj interface{}) string {
-	jsonBytes, err := json.MarshalIndent(obj, "", "\t")
-	if err != nil {
-		panic(err)
-	}
-
-	return string(jsonBytes)
-}
-
-// TODO: move to utils
-func stringToJSONRawMessage(obj string) json.RawMessage {
-	var res json.RawMessage
-
-	err := json.Unmarshal([]byte(obj), &res)
-	if err != nil {
-		panic(err)
-	}
-
-	return res
-}
