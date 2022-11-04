@@ -20,6 +20,7 @@ jobs:
   include:
     - stage: style
       script:
+        - ./gosec.sh
         - ./gocyclo.sh
         - ./ineffassign.sh
 
