@@ -14,12 +14,16 @@ Please delete options that are not relevant.
 - This change requires a documentation update
 - Refactor (refactoring code, removing useless files)
 - Bump-up dependent library (no changes in the code)
+- Security fix in dependent library (no changes in the code)
+- Security fix in dependent library (changes made in the code)
 - Documentation update
+- Configuration update
 
 ## Testing steps
 
 Please describe how the change was tested locally. If, for some reason, the testing was not done or not done fully, please describe what are the testing steps.
 
 ## Checklist
+* [ ] `make before_commit` passes
 * [ ] updated documentation wherever necessary
 * [ ] updated schemas and validators in [insights-data-schemas](https://github.com/RedHatInsights/insights-data-schemas) in case of input/output change
