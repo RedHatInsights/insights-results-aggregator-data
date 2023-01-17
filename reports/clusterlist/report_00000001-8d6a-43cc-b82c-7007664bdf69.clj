@@ -4,7 +4,7 @@
                              "networking"
                              "service_availability"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "BUGZILLA_BUG_1766907"},
@@ -18,7 +18,7 @@
                      "resolution" "Red Hat recommends that you to use this workaround:\n1. Set the proxy manually\n~~~\n# oc -n openshift-cluster-version set env deploy cluster-version-operator HTTP_PROXY=xxx HTTPS_PROXY=xxx NO_PROXY=xxx\n~~~\n"}
                     {"tags" ["openshift" "service_availability"],
                      "total_risk" 3,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"error_key" "BUGZILLA_BUG_1821905",
                                 "type" "rule",
@@ -43,7 +43,7 @@
                      "resolution" "OpenShift Container Platform (OCP) 4.3.13 will no longer block upgrades if the SCC is not the default.\n\nThe original issue raised affected versions 4.3.8, 4.3.9, 4.3.10, 4.3.11, and 4.3.12.\n\n- I have already upgraded to one of the affected versions:\n  - You will need to use the `--force` flag to upgrade.\n- I must upgrade to one of the affected versions before I can upgrade to 4.3.13:\n- This is not recommended. However, if you must upgrade to an affected version, be aware that you will need to use the `--force` flag to perform your next upgrade.\n\n**Using the `--force` flag**:\n\n**IMPORTANT:** Any changes you have made to the default SCCs `anyuid`, `hostaccess`, `hostmount-anyuid`, `hostnetwork`, `nonroot`, `privileged`, or `restricted` may be removed later when you upgrade to 4.4 which could cause system instability. You should address this issue by migrating any changes you made to the mentioned default SCCs to new SCCs.\n\n- Use of the `--force` flag will skip all precondition tests. You must verify that there are no other preconditions which need to be considered.\n- Upgrading using `--force` **will not** remove the changes you have made to the default SCCs. You should create a plan to migrate the changes you made to the default SCCs to new SCCs before you upgrade to 4.4.\n\nThe `--force` flag can be added to your `oc adm upgrade` command. For example:\n~~~\n# oc adm upgrade --force --to 4.3.13\n~~~\n"}
                     {"tags" ["security" "service_availability"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"op" {"available" {"message" nil,
                                                    "reason" "NoData",
@@ -95,7 +95,7 @@
                      "resolution" "Red Hat recommends that you to follow steps in the KCS article.\n * [Authentication operator Degraded with Reason `WellKnownEndpointDegradedError`](https://access.redhat.com/solutions/4569191)\n"}
                     {"tags" ["openshift" "service_availability"],
                      "total_risk" 3,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "NODE_INSTALLER_DEGRADED"},
@@ -129,7 +129,7 @@
                              "configuration"
                              "performance"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"nodes" [{"name" "foo1",
                                           "role" "master",
@@ -157,7 +157,7 @@
                              "registry"
                              "service_availability"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"info" {"name" "openshift-samples",
                                         "condition" "Degraded",
@@ -183,7 +183,7 @@
                      "resolution" "Red Hat recommends that you to follow these steps:\n\n1. Fix 1, Try running:\n~~~\n# oc import-image <for the ImageStream(s) in question>\n~~~\n\n1. Fix 2, Try running:\n~~~\n# oc delete configs.samples cluster\n~~~"}
                     {"tags" [],
                      "total_risk" 1,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "TUTORIAL_ERROR"},

@@ -2,7 +2,7 @@
                     "last_checked_at" "2020-05-27T14:15:35Z"},
             "data" [{"tags" [],
                      "total_risk" 1,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "TUTORIAL_ERROR"},
@@ -16,7 +16,7 @@
                      "resolution" ""}
                     {"tags" ["security" "service_availability"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"op" {"available" {"message" nil,
                                                    "reason" "NoData",
@@ -70,7 +70,7 @@
                              "networking"
                              "service_availability"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "BUGZILLA_BUG_1766907"},
@@ -86,7 +86,7 @@
                              "configuration"
                              "performance"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"nodes" [{"name" "foo1",
                                           "role" "master",
@@ -114,7 +114,7 @@
                              "registry"
                              "service_availability"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"info" {"name" "openshift-samples",
                                         "condition" "Degraded",

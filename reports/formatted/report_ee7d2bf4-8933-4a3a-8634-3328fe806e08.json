@@ -12,7 +12,7 @@
         "reason": "",
         "resolution": "",
         "total_risk": 1,
-        "risk_of_change": 0,
+        
         "rule_id": "ccx_rules_ocm.tutorial_rule",
         "extra_data": {
           "error_key": "TUTORIAL_ERROR",

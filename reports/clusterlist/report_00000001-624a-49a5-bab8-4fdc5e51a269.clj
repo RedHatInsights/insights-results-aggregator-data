@@ -2,7 +2,7 @@
                     "last_checked_at" "2020-05-27T14:15:35Z"},
             "data" [{"tags" ["openshift" "service_availability"],
                      "total_risk" 3,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "NODE_INSTALLER_DEGRADED"},
@@ -34,7 +34,7 @@
                      "resolution" "You may be hitting a [known bug](https://bugzilla.redhat.com/show_bug.cgi?id=1723966) and Red Hat recommends that you complete the following steps:\n\n{{~ pydata.degraded_operators :operator }}\n{{? operator[\"name\"] == \"kube-apiserver\"}}\n- For the **kube-apiserver** clusteroperator do:\n~~~\noc patch kubeapiserver/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-controller-manager\"}}\n- For the **kube-controller-manager** clusteroperator do:\n~~~\noc patch kubecontrollermanager/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\n{{? operator[\"name\"] == \"kube-scheduler\"}}\n- For the **kube-scheduler** clusteroperator do:\n~~~\noc patch kubescheduler/cluster --type merge -p \"{\\\"spec\\\":{\\\"forceRedeploymentReason\\\":\\\"Forcing new revision with random number $RANDOM to make message unique\\\"}}\"\n~~~\n{{?}}\nThen wait several minutes and check if the operator is no longer degraded or progressing. If it is still degraded and the same error message is shown, retry (the race condition can be triggered again). If the error message is different or some retries do not make any improvement, open a support case to get further assistance.\n\nIf this solution solves your issue, but you are interested in tracking the definitive resolution of the bug, you can open a support case to do that as well.\n{{~}}"}
                     {"tags" [],
                      "total_risk" 1,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "TUTORIAL_ERROR"},
@@ -50,7 +50,7 @@
                              "networking"
                              "service_availability"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "BUGZILLA_BUG_1766907"},
@@ -66,7 +66,7 @@
                              "configuration"
                              "performance"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"nodes" [{"name" "foo1",
                                           "role" "master",
@@ -94,7 +94,7 @@
                              "registry"
                              "service_availability"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"info" {"name" "openshift-samples",
                                         "condition" "Degraded",
@@ -120,7 +120,7 @@
                      "resolution" "Red Hat recommends that you to follow these steps:\n\n1. Fix 1, Try running:\n~~~\n# oc import-image <for the ImageStream(s) in question>\n~~~\n\n1. Fix 2, Try running:\n~~~\n# oc delete configs.samples cluster\n~~~"}
                     {"tags" ["openshift" "service_availability"],
                      "total_risk" 3,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"error_key" "BUGZILLA_BUG_1821905",
                                 "type" "rule",
