@@ -2,7 +2,7 @@
                     "last_checked_at" "2020-05-27T09:18:29Z"},
             "data" [{"tags" [],
                      "total_risk" 1,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"type" "rule",
                                 "error_key" "TUTORIAL_ERROR"},

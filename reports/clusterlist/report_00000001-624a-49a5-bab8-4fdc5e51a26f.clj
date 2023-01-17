@@ -4,7 +4,7 @@
                              "configuration"
                              "performance"],
                      "total_risk" 2,
-                     "risk_of_change" 0,
+                     
                      "user_vote" 0,
                      "details" {"nodes" [{"name" "foo1",
                                           "role" "master",

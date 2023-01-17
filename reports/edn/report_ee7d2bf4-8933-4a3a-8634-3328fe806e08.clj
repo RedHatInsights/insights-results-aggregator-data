@@ -9,7 +9,7 @@
               "extra_data" {"error_key" "TUTORIAL_ERROR", "type" "rule"},
               "reason" "",
               "resolution" "",
-              "risk_of_change" 0,
+              
               "rule_id" "ccx_rules_ocm.tutorial_rule",
               "tags" [],
               "total_risk" 1,
