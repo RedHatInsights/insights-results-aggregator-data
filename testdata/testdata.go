@@ -40,6 +40,11 @@ const (
 	// ClusterVersion represents the version of the cluster that belongs to known organization
 	ClusterVersion = types.Version("1.0")
 
+	RequestID1 = types.RequestID("2l0kjrcja617xfltbf2r7dkhry")
+	RequestID2 = types.RequestID("swpfjg7tjq7d3iydignny9ac6z")
+	RequestID3 = types.RequestID("27idlouu59o6a2sqthd843rnd5")
+	RequestID4 = types.RequestID("grd8ws483jiv3chj70y4bbx6z2")
+
 	UserID             = types.UserID("1")
 	User2ID            = types.UserID("2")
 	BadClusterName     = types.ClusterName("aaaa")
